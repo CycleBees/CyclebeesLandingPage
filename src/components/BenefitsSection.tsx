@@ -16,7 +16,7 @@ const BenefitsSection: React.FC = () => {
     },
     {
       title: 'Genuine Parts',
-      description: 'We use only OEM and high-grade spare parts to ensure your bike performs at its best.',
+      description: 'We use only OEM and high-grade spare parts to ensure your bicycle performs at its best.',
       icon: '🔧'
     },
     {
@@ -35,7 +35,7 @@ const BenefitsSection: React.FC = () => {
   };
 
   return (
-    <section id="benefits" className="h-[70vh] bg-gradient-to-br from-secondary-100 to-secondary-400 py-12">
+    <section id="benefits" className="h-[70vh] bg-gradient-to-br from-secondary-100 to-secondary-400 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -46,51 +46,54 @@ const BenefitsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-white hover:bg-white/20 transition-all duration-200">
-              <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
-              <p className="text-white/90 leading-relaxed">
+            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-white hover:bg-white/20 transition-all duration-200">
+              <div className="text-3xl mb-3">{benefit.icon}</div>
+              <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
+              <p className="text-white/90 leading-relaxed text-sm">
                 {benefit.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="md:hidden relative">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-white text-center min-h-[300px] flex flex-col justify-center">
-            <div className="text-5xl mb-6">{benefits[currentSlide].icon}</div>
-            <h3 className="text-2xl font-bold mb-4">{benefits[currentSlide].title}</h3>
-            <p className="text-white/90 leading-relaxed mb-6">
+        <div className="md:hidden">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+            <div className="text-4xl mb-4">{benefits[currentSlide].icon}</div>
+            <h3 className="text-xl font-bold mb-3">{benefits[currentSlide].title}</h3>
+            <p className="text-white/90 leading-relaxed mb-4 text-sm">
               {benefits[currentSlide].description}
             </p>
             
-            <div className="flex justify-center space-x-2 mb-4">
-              {benefits.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentSlide ? 'bg-primary' : 'bg-white/30'
-                  }`}
-                />
-              ))}
+            <div className="flex justify-center items-center space-x-4">
+              <button
+                onClick={prevSlide}
+                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+              >
+                ‹
+              </button>
+              
+              <div className="flex justify-center space-x-2">
+                {benefits.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                      index === currentSlide ? 'bg-primary' : 'bg-white/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={nextSlide}
+                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+              >
+                ›
+              </button>
             </div>
           </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-          >
-            ‹
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-          >
-            ›
-          </button>
         </div>
 
         <div className="mt-8 text-center">

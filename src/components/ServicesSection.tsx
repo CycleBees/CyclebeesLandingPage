@@ -14,7 +14,7 @@ const ServicesSection: React.FC = () => {
     { name: 'Gear Adjustment', icon: '⚙️' },
     { name: 'Tyre Replacement', icon: '🛞' },
     { name: 'Wheel Truing', icon: '⚪' },
-    { name: 'E-Bike Diagnostics', icon: '🔋' },
+    { name: 'E-Bicycle Diagnostics', icon: '🔋' },
     { name: 'Periodic Service', icon: '📅' },
     { name: 'Full Overhaul', icon: '🔧' },
     { name: 'Quick Wash', icon: '💧' },
@@ -35,19 +35,18 @@ const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="h-[70vh] bg-white py-12">
+    <section id="services" className="h-[70vh] bg-white py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
-            Bicycle Services at Home
-          </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Skip the shop queue—our certified mechanics come to you anywhere in Coimbatore.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 h-full items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 h-full items-center">
           <div className="lg:col-span-3">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
+                Bicycle Services at Home
+              </h2>
+              <p className="text-lg text-secondary-600">
+                Skip the shop queue—our certified mechanics come to you anywhere in Coimbatore.
+              </p>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {services.map((service, index) => (
                 <div key={index} className="bg-secondary-300/20 hover:bg-primary/20 rounded-lg p-4 text-center transition-all duration-200 hover:scale-105 cursor-pointer">
@@ -58,9 +57,9 @@ const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-1">
-            <div className="bg-secondary-100 rounded-lg p-6 text-white">
-              <h3 className="text-xl font-bold mb-4">Book Now</h3>
+          <div className="lg:col-span-2">
+            <div className="bg-secondary-100 rounded-lg p-5 text-white max-w-sm ml-auto">
+              <h3 className="text-lg font-bold mb-3">Book Now</h3>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <input
                   type="text"

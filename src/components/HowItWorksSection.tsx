@@ -6,7 +6,7 @@ const HowItWorksSection: React.FC = () => {
     {
       number: '1',
       title: 'Select Service/Rental',
-      description: 'Choose from our comprehensive range of services or rental bikes.',
+      description: 'Choose from our comprehensive range of services or rental bicycles.',
       icon: '🔧'
     },
     {
@@ -30,73 +30,37 @@ const HowItWorksSection: React.FC = () => {
   ];
 
   return (
-    <section id="howItWorks" className="h-[70vh] bg-white py-12">
+    <section id="howItWorks" className="h-[70vh] bg-white py-1">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-3">
             How CycleBees Works
           </h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Get professional bike service in just 4 simple steps
+            Get professional bicycle service in just 4 simple steps
           </p>
         </div>
 
-        <div className="flex justify-center mb-6">
-          <div className="relative">
-            <Image
-              src="/hero-app.webp"
-              alt="CycleBees App Process"
-              width={200}
-              height={400}
-              className="drop-shadow-xl"
-            />
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-          </div>
-        </div>
-
-        <div className="hidden md:block">
-          <div className="relative">
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-primary transform -translate-y-1/2"></div>
-            <div className="grid grid-cols-4 gap-8">
-              {steps.map((step, index) => (
-                <div key={index} className="text-center relative">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center text-2xl relative z-10">
-                    <span className="text-secondary-100 font-bold">{step.number}</span>
-                  </div>
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-secondary-300/20">
-                    <div className="text-3xl mb-3">{step.icon}</div>
-                    <h3 className="text-lg font-bold text-secondary-100 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-secondary-600">
-                      {step.description}
-                    </p>
-                  </div>
+        <div className="relative flex-1 flex items-center py-2">
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-primary transform -translate-y-1/2 hidden md:block"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center relative">
+                <div className="w-10 h-10 mx-auto mb-2 bg-primary rounded-full flex items-center justify-center text-sm relative z-10">
+                  <span className="text-secondary-100 font-bold">{step.number}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="md:hidden space-y-6">
-          {steps.map((step, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-lg font-bold text-secondary-100 flex-shrink-0">
-                {step.number}
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-secondary-300/20 flex-1">
-                <div className="flex items-center mb-3">
-                  <span className="text-2xl mr-3">{step.icon}</span>
-                  <h3 className="text-lg font-bold text-secondary-100">
+                <div className="bg-white rounded-lg p-3 shadow-md border border-secondary-300/20">
+                  <div className="text-xl mb-1">{step.icon}</div>
+                  <h3 className="text-sm font-bold text-secondary-100 mb-1">
                     {step.title}
                   </h3>
+                  <p className="text-xs text-secondary-600">
+                    {step.description}
+                  </p>
                 </div>
-                <p className="text-secondary-600">
-                  {step.description}
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   const benefits = [
-    'Doorstep repairs for kids\' & pro bikes',
+    'Doorstep repairs for kids\' & pro bicycles',
     'Premium rentals delivered to your hotel', 
     'Coaching programs from certified riders'
   ];
@@ -18,14 +18,14 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-100 pt-16">
+    <section id="hero" className="h-[70vh] flex items-center justify-center bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-100 mb-4 leading-tight">
               Download{' '}
-              <span className="gradient-text">CycleBees</span>{' '}
-              for Bike Service
+              <span className="text-secondary-100">CycleBees</span>{' '}
+              for Bicycle Service
             </h1>
             
             <p className="text-lg text-secondary-100/90 mb-6 max-w-xl">
@@ -41,7 +41,7 @@ const HeroSection: React.FC = () => {
               </button>
               <button
                 onClick={handleBookService}
-                className="bg-white/10 backdrop-blur-sm text-secondary-100 border-2 border-secondary-100 px-6 py-3 rounded-lg hover:bg-white/20 transition-all duration-200 font-semibold"
+                className="bg-secondary-100 text-white px-6 py-3 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold shadow-lg"
               >
                 Book Service
               </button>

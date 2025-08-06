@@ -4,24 +4,24 @@ import Image from 'next/image';
 const BlogSection: React.FC = () => {
   const blogPosts = [
     {
-      title: 'Essential Bike Maintenance Tips for Monsoon Season',
-      excerpt: 'Keep your bike in perfect condition during the rainy season with these expert maintenance tips...',
+      title: 'Essential Bicycle Maintenance Tips for Monsoon Season',
+      excerpt: 'Keep your bicycle in perfect condition during the rainy season with these expert maintenance tips...',
       image: '/hero-app.webp',
       date: 'Aug 5, 2025',
       category: 'Maintenance',
       readTime: '5 min read'
     },
     {
-      title: 'Choosing the Right Bike for Coimbatore Streets',
-      excerpt: 'Navigate Coimbatore\'s unique terrain with confidence. Our guide to selecting the perfect bike...',
+      title: 'Choosing the Right Bicycle for Coimbatore Streets',
+      excerpt: 'Navigate Coimbatore\'s unique terrain with confidence. Our guide to selecting the perfect bicycle...',
       image: '/hero-app.webp',
       date: 'Aug 3, 2025',
       category: 'Guide',
       readTime: '7 min read'
     },
     {
-      title: 'E-Bike Revolution: Future of Urban Commuting',
-      excerpt: 'Discover how electric bikes are transforming daily commutes and reducing carbon footprints...',
+      title: 'E-Bicycle Revolution: Future of Urban Commuting',
+      excerpt: 'Discover how electric bicycles are transforming daily commutes and reducing carbon footprints...',
       image: '/hero-app.webp',
       date: 'Aug 1, 2025',
       category: 'Technology',
@@ -30,8 +30,8 @@ const BlogSection: React.FC = () => {
   ];
 
   return (
-    <section id="blog" className="h-[70vh] bg-secondary-300/20 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+    <section id="blog" className="min-h-[60vh] bg-secondary-300/20 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
             Latest from the Hive
@@ -90,22 +90,28 @@ const BlogSection: React.FC = () => {
           </button>
         </div>
 
-        <div className="mt-6 bg-white/50 backdrop-blur-sm rounded-lg p-6 text-center">
-          <h3 className="text-2xl font-bold text-secondary-100 mb-4">
-            Stay in the Loop
-          </h3>
-          <p className="text-secondary-600 mb-6">
-            Subscribe to our newsletter for the latest cycling tips and CycleBees updates
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button className="bg-primary text-secondary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
-              Subscribe
-            </button>
+        <div className="mt-12">
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary-300 to-transparent mb-8"></div>
+          <div className="bg-gradient-to-r from-primary/10 via-secondary-300/20 to-primary/10 rounded-xl p-8 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-secondary-100 mb-4">
+                🚴‍♀️ Stay in the Loop
+              </h3>
+              <p className="text-secondary-600 mb-8 text-lg">
+                Subscribe to our newsletter for the latest cycling tips, maintenance guides, and exclusive CycleBees updates delivered to your inbox
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 rounded-xl border-2 border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-lg"
+                />
+                <button className="bg-primary text-secondary-100 px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Subscribe Now
+                </button>
+              </div>
+              <p className="text-secondary-600/70 text-sm mt-4">✨ Join 500+ cycling enthusiasts who trust our expert advice</p>
+            </div>
           </div>
         </div>
       </div>
