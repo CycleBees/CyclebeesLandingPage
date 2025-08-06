@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --foreground-rgb: 45, 62, 80;
+  --background-rgb: 255, 255, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 70vh;
+}
+
+/* Responsive breakpoints following the 12-column desktop / 4-column mobile grid */
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Smooth scroll for iOS/Safari */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #FFD11E;
+  outline-offset: 2px;
+}
+
+/* Custom gradient utilities */
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, #FFD11E 0%, #2D3E50 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #FFD11E, #FBE9A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
