@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const BenefitsSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
+  const navButtonStyles = "w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200";
+  
   const benefits = [
     {
       title: 'Certified Technicians',
@@ -35,8 +37,8 @@ const BenefitsSection: React.FC = () => {
   };
 
   return (
-    <section id="benefits" className="h-[70vh] bg-gradient-to-br from-secondary-100 to-secondary-400 py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+    <section id="benefits" className="min-h-[100vh] sm:min-h-[70vh] bg-gradient-to-br from-secondary-100 to-secondary-400 py-8 sm:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Why Riders Love CycleBees
@@ -46,7 +48,8 @@ const BenefitsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-white hover:bg-white/20 transition-all duration-200">
               <div className="text-3xl mb-3">{benefit.icon}</div>
@@ -58,6 +61,7 @@ const BenefitsSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Mobile Carousel View */}
         <div className="md:hidden">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center">
             <div className="text-4xl mb-4">{benefits[currentSlide].icon}</div>
@@ -67,10 +71,7 @@ const BenefitsSection: React.FC = () => {
             </p>
             
             <div className="flex justify-center items-center space-x-4">
-              <button
-                onClick={prevSlide}
-                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-              >
+              <button onClick={prevSlide} className={navButtonStyles}>
                 ‹
               </button>
               
@@ -86,10 +87,7 @@ const BenefitsSection: React.FC = () => {
                 ))}
               </div>
               
-              <button
-                onClick={nextSlide}
-                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
-              >
+              <button onClick={nextSlide} className={navButtonStyles}>
                 ›
               </button>
             </div>

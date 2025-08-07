@@ -8,6 +8,8 @@ const ServicesSection: React.FC = () => {
     preferredDateTime: ''
   });
 
+  const inputStyles = "w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary text-sm";
+
   const services = [
     { name: 'Chain Repair', icon: '🔗' },
     { name: 'Brake Tuning', icon: '🛑' },
@@ -35,9 +37,9 @@ const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="h-[70vh] bg-white py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 h-full items-center">
+    <section id="services" className="min-h-[100vh] sm:min-h-[70vh] bg-white py-8 sm:py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-8 lg:h-full lg:items-center">
           <div className="lg:col-span-3">
             <div className="mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
@@ -57,8 +59,8 @@ const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
-            <div className="bg-secondary-100 rounded-lg p-5 text-white max-w-sm ml-auto">
+          <div className="lg:col-span-2 mt-8 lg:mt-0">
+            <div className="bg-secondary-100 rounded-lg p-5 text-white max-w-full lg:max-w-sm lg:ml-auto">
               <h3 className="text-lg font-bold mb-3">Book Now</h3>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <input
@@ -67,7 +69,7 @@ const ServicesSection: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  className={inputStyles}
                   placeholder="Your name"
                 />
 
@@ -78,7 +80,7 @@ const ServicesSection: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   pattern="[0-9]{10}"
-                  className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  className={inputStyles}
                   placeholder="+91 XXXXXXXXXX"
                 />
 
@@ -87,7 +89,7 @@ const ServicesSection: React.FC = () => {
                   value={formData.serviceType}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  className={inputStyles}
                 >
                   <option value="" className="text-secondary-100">Select service</option>
                   {services.slice(0, 5).map((service, index) => (
@@ -103,7 +105,7 @@ const ServicesSection: React.FC = () => {
                   value={formData.preferredDateTime}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+                  className={inputStyles}
                 />
 
                 <button

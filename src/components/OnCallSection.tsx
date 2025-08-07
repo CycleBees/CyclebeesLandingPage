@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const OnCallSection: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % benefits.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + benefits.length) % benefits.length);
+  };
+
+  const navButtonStyles = "w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-primary/30 transition-colors duration-200";
+  
   const benefits = [
     {
       title: 'Less Time Consuming',
@@ -20,8 +32,8 @@ const OnCallSection: React.FC = () => {
   ];
 
   return (
-    <section id="onCall" className="h-[70vh] bg-secondary-300/10 py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+    <section id="onCall" className="min-h-[80vh] sm:min-h-[70vh] bg-secondary-300/10 py-8 sm:py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-3">
             Mechanic-on-Call Service
@@ -29,7 +41,8 @@ const OnCallSection: React.FC = () => {
           <p className="text-lg text-secondary-600">Professional service at your doorstep</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1 items-center mb-4">
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid grid-cols-3 gap-6 flex-1 items-center mb-4">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
               <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">
@@ -43,6 +56,43 @@ const OnCallSection: React.FC = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Carousel View */}
+        <div className="md:hidden flex-1 mb-4">
+          <div className="bg-white rounded-xl p-6 text-center shadow-md">
+            <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">
+              {benefits[currentSlide].icon}
+            </div>
+            <h3 className="text-lg font-bold text-secondary-100 mb-3">
+              {benefits[currentSlide].title}
+            </h3>
+            <p className="text-sm text-secondary-600 leading-relaxed mb-4">
+              {benefits[currentSlide].description}
+            </p>
+            
+            <div className="flex justify-center items-center space-x-4">
+              <button onClick={prevSlide} className={navButtonStyles}>
+                ‹
+              </button>
+              
+              <div className="flex justify-center space-x-2">
+                {benefits.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                      index === currentSlide ? 'bg-primary' : 'bg-secondary-300/30'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <button onClick={nextSlide} className={navButtonStyles}>
+                ›
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="text-center">

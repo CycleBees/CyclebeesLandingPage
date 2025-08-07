@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const WhyUsSection: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % features.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+  };
+
+  const navButtonStyles = "w-8 h-8 bg-secondary-300/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-secondary-300/30 transition-colors duration-200";
+  
   const features = [
     {
       title: 'Doorstep Convenience',
@@ -21,8 +33,8 @@ const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="whyUs" className="h-[70vh] bg-white py-4">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+    <section id="whyUs" className="min-h-[90vh] sm:min-h-[70vh] bg-white py-8 sm:py-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
             The CycleBees Difference
@@ -32,7 +44,8 @@ const WhyUsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid grid-cols-2 gap-6 flex-1">
           {features.map((feature, index) => (
             <div key={index} className="bg-secondary-300/10 rounded-lg p-5">
               <div className="flex items-start space-x-3">
@@ -52,6 +65,49 @@ const WhyUsSection: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Carousel View */}
+        <div className="md:hidden flex-1">
+          <div className="bg-secondary-300/10 rounded-lg p-5 mb-4">
+            <div className="flex items-start space-x-3">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-secondary-100 font-bold text-sm">
+                  {currentSlide + 1}
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-secondary-100 mb-2">
+                  {features[currentSlide].title}
+                </h3>
+                <p className="text-secondary-600 text-sm leading-relaxed">
+                  {features[currentSlide].content.substring(0, 180)}...
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex justify-center items-center space-x-4">
+            <button onClick={prevSlide} className={navButtonStyles}>
+              ‹
+            </button>
+            
+            <div className="flex justify-center space-x-2">
+              {features.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                    index === currentSlide ? 'bg-primary' : 'bg-secondary-300/30'
+                  }`}
+                />
+              ))}
+            </div>
+            
+            <button onClick={nextSlide} className={navButtonStyles}>
+              ›
+            </button>
+          </div>
         </div>
 
       </div>
