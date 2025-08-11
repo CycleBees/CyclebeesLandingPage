@@ -40,82 +40,94 @@ const BlogSection: React.FC = () => {
   
   const blogPosts = [
     {
-      title: 'Essential Bicycle Maintenance Tips for Monsoon Season',
-      excerpt: 'Keep your bicycle in perfect condition during the rainy season with these expert maintenance tips...',
+      id: 'monsoon-maintenance-tips',
+      title: 'Bicycle Maintenance for Monsoon',
+      excerpt: 'Expert tips to keep your bike perfect during rainy season',
       image: '/hero-app.webp',
       date: 'Aug 5, 2025',
       category: 'Maintenance',
-      readTime: '5 min read'
+      readTime: '5 min'
     },
     {
-      title: 'Choosing the Right Bicycle for Coimbatore Streets',
-      excerpt: 'Navigate Coimbatore\'s unique terrain with confidence. Our guide to selecting the perfect bicycle...',
+      id: 'coimbatore-bike-guide',
+      title: 'Best Bikes for Coimbatore Streets',
+      excerpt: 'Navigate city terrain with confidence - our selection guide',
       image: '/hero-app.webp',
       date: 'Aug 3, 2025',
       category: 'Guide',
-      readTime: '7 min read'
+      readTime: '7 min'
     },
     {
-      title: 'E-Bicycle Revolution: Future of Urban Commuting',
-      excerpt: 'Discover how electric bicycles are transforming daily commutes and reducing carbon footprints...',
+      id: 'electric-bike-future',
+      title: 'E-Bike Revolution in Urban Areas',
+      excerpt: 'How electric bikes are transforming daily commutes',
       image: '/hero-app.webp',
       date: 'Aug 1, 2025',
       category: 'Technology',
-      readTime: '6 min read'
+      readTime: '6 min'
+    },
+    {
+      id: 'bike-safety-tips',
+      title: 'Essential Safety Tips for Cyclists',
+      excerpt: 'Stay safe on the road with these proven cycling tips',
+      image: '/hero-app.webp',
+      date: 'Jul 30, 2025',
+      category: 'Safety',
+      readTime: '4 min'
     }
   ];
 
   return (
-    <section id="blog" className="bg-secondary-300/20 py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
+    <section id="blog" className="bg-secondary-300/20 py-10 sm:py-8 my-5 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">
             Latest from the Hive
           </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Stay updated with the latest cycling tips, maintenance guides, and industry insights
+          <p className="text-sm text-secondary-600 max-w-xl mx-auto">
+            Latest cycling tips, maintenance guides, and industry insights
           </p>
         </div>
 
         {/* Desktop Grid View */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-4 gap-4">
           {blogPosts.map((post, index) => (
-            <article key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 group">
-              <div className="relative h-48 overflow-hidden">
+            <article key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group">
+              <div className="relative h-32 overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-200"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-secondary-100 px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-2 left-2">
+                  <span className="bg-primary text-secondary-100 px-2 py-1 rounded text-xs font-semibold">
                     {post.category}
                   </span>
                 </div>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center text-sm text-secondary-600 mb-3">
+              <div className="p-4">
+                <div className="flex items-center text-xs text-secondary-600 mb-2">
                   <span>{post.date}</span>
-                  <span className="mx-2">•</span>
+                  <span className="mx-1">•</span>
                   <span>{post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-secondary-100 mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
+                <h3 className="text-sm font-bold text-secondary-100 mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-200">
                   {post.title}
                 </h3>
                 
-                <p className="text-secondary-600 line-clamp-3 mb-4">
+                <p className="text-secondary-600 text-xs line-clamp-2 mb-3">
                   {post.excerpt}
                 </p>
                 
                 <Link 
-                  href="/blog"
-                  className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center"
+                  href={`/blog/${post.id}`}
+                  className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-xs"
                 >
                   Read More
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -125,48 +137,48 @@ const BlogSection: React.FC = () => {
         </div>
 
         {/* Mobile Carousel View */}
-        <div className="md:hidden mb-6">
+        <div className="md:hidden mb-4">
           <article 
-            className="bg-white rounded-xl overflow-hidden shadow-lg mb-4"
+            className="bg-white rounded-lg overflow-hidden shadow-md mb-4"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-40 overflow-hidden">
               <Image
                 src={blogPosts[currentSlide].image}
                 alt={blogPosts[currentSlide].title}
                 fill
                 className="object-cover"
               />
-              <div className="absolute top-4 left-4">
-                <span className="bg-primary text-secondary-100 px-3 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute top-2 left-2">
+                <span className="bg-primary text-secondary-100 px-2 py-1 rounded text-xs font-semibold">
                   {blogPosts[currentSlide].category}
                 </span>
               </div>
             </div>
             
-            <div className="p-6">
-              <div className="flex items-center text-sm text-secondary-600 mb-3">
+            <div className="p-4">
+              <div className="flex items-center text-xs text-secondary-600 mb-2">
                 <span>{blogPosts[currentSlide].date}</span>
-                <span className="mx-2">•</span>
+                <span className="mx-1">•</span>
                 <span>{blogPosts[currentSlide].readTime}</span>
               </div>
               
-              <h3 className="text-xl font-bold text-secondary-100 mb-3">
+              <h3 className="text-sm font-bold text-secondary-100 mb-2">
                 {blogPosts[currentSlide].title}
               </h3>
               
-              <p className="text-secondary-600 mb-4">
+              <p className="text-secondary-600 text-xs mb-3">
                 {blogPosts[currentSlide].excerpt}
               </p>
               
               <Link 
-                href="/blog"
-                className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center"
+                href={`/blog/${blogPosts[currentSlide].id}`}
+                className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-xs"
               >
                 Read More
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
@@ -199,33 +211,33 @@ const BlogSection: React.FC = () => {
         <div className="text-center mt-6">
           <Link 
             href="/blog"
-            className="inline-block bg-secondary-100 text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200"
+            className="inline-block bg-secondary-100 text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200 text-sm"
           >
             View All Articles
           </Link>
         </div>
 
-        <div className="mt-12 sm:mt-12">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary-300 to-transparent mb-8"></div>
-          <div className="bg-gradient-to-r from-primary/10 via-secondary-300/20 to-primary/10 rounded-xl p-8 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-secondary-100 mb-4">
-                🚴‍♀️ Join Our Amazing Community
+        <div className="mt-8">
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-secondary-300 to-transparent mb-6"></div>
+          <div className="bg-gradient-to-r from-primary/10 via-secondary-300/20 to-primary/10 rounded-lg p-6 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-xl font-bold text-secondary-100 mb-3">
+                🚴‍♀️ Join Our Cycling Community
               </h3>
-              <p className="text-secondary-600 mb-8 text-lg">
-                Subscribe to our newsletter for the latest cycling tips, maintenance guides, and exclusive CycleBees updates delivered to your inbox
+              <p className="text-secondary-600 mb-6 text-sm">
+                Get latest cycling tips, maintenance guides, and exclusive CycleBees updates
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-lg mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-6 py-4 rounded-xl border-2 border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-lg"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm"
                 />
-                <button className="bg-primary text-secondary-100 px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                  Subscribe Now
+                <button className="bg-primary text-secondary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200 text-sm shadow-md">
+                  Subscribe
                 </button>
               </div>
-              <p className="text-secondary-600/70 text-sm mt-4">✨ Join 500+ cycling enthusiasts who trust our expert advice</p>
+              <p className="text-secondary-600/70 text-xs mt-3">✨ 500+ cyclists trust our expert advice</p>
             </div>
           </div>
         </div>

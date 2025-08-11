@@ -56,13 +56,13 @@ const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="whyUs" className="bg-white py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
+    <section id="whyUs" className="bg-white py-10 sm:py-8 my-5 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">
             The CycleBees Difference
           </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+          <p className="text-sm text-secondary-600 max-w-xl mx-auto">
             Why thousands of riders trust us
           </p>
         </div>

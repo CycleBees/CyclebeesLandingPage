@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import DownloadAppSection from '@/components/DownloadAppSection';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const ContactPage: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const contactInfo = [
     {
@@ -88,46 +90,75 @@ const ContactPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="min-h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16 border-b border-light-yellow">
+        <section className="min-h-[30vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
                 Get in Touch
               </h1>
-              <p className="text-xl text-secondary-100/90 max-w-3xl mx-auto">
-                Have questions? Need support? We're here to help 24/7
+              <p className="text-lg text-secondary-100/90 max-w-2xl mx-auto">
+                Professional support & assistance - We're here to help 24/7
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contact Info */}
-        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
+        {/* Main Content */}
+        <section className="py-12 my-5 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
-                    {info.icon}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+              {/* Left Column - Contact Info */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-lg md:text-xl font-bold text-secondary-100 mb-3">Office Address</h2>
+                  <div className="bg-gradient-to-br from-primary/5 to-secondary-100/5 rounded-lg p-4 border border-primary/10">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-lg flex-shrink-0">🏢</div>
+                      <div>
+                        <h3 className="text-lg font-bold text-secondary-100 mb-2">CycleBees Office</h3>
+                        <p className="text-sm text-secondary-600 mb-3">RS Puram, Coimbatore<br/>Tamil Nadu - 641002</p>
+                        <div className="space-y-1 text-xs">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-primary">📞</span>
+                            <span>+91 95973 12212</span>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-primary">✉️</span>
+                            <span>mail@cyclebees.in</span>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-primary">🕐</span>
+                            <span>6 AM - 10 PM (24/7 Emergency)</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-secondary-100 mb-2">{info.title}</h3>
-                  <p className="text-primary font-semibold mb-1">{info.value}</p>
-                  <p className="text-secondary-600 text-sm">{info.description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Contact Form */}
-        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow border-b border-light-yellow">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-4">Send us a Message</h2>
-              <p className="text-lg text-secondary-600">We'll get back to you within 2 hours</p>
-            </div>
+                {/* Quick Contact Options */}
+                <div>
+                  <h3 className="text-lg font-bold text-secondary-100 mb-3">Quick Contact</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a href="tel:+919597312212" className="bg-green-600 text-white px-3 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 text-center flex items-center justify-center space-x-1 text-sm">
+                      <span>📞</span>
+                      <span>Call</span>
+                    </a>
+                    <a href="https://wa.me/919597312212" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 text-center flex items-center justify-center space-x-1 text-sm">
+                      <span>📱</span>
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Column - Contact Form */}
+              <div>
+                <h2 className="section-title text-center mb-6">Send us a Message</h2>
+                <p className="section-subtitle text-center mb-8">Professional support - We respond within 2 hours</p>
 
-            <div className="bg-white rounded-xl shadow-lg p-8">
+                <div className="bg-white rounded-xl shadow-xl border border-primary/10 p-6">
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
@@ -223,96 +254,48 @@ const ContactPage: React.FC = () => {
                   </div>
                 </form>
               )}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-8 my-3 bg-secondary-300/10 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-secondary-600">Quick answers to common questions</p>
+            <div className="text-center mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Frequently Asked Questions</h2>
+              <p className="text-sm text-secondary-600">Quick answers to common questions</p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="border border-secondary-300/20 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-secondary-100 mb-3">{faq.question}</h3>
-                  <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                <div key={index} className="bg-white border border-secondary-300/20 rounded-xl overflow-hidden shadow-sm">
+                  <button
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-secondary-300/5 transition-colors duration-200"
+                  >
+                    <h3 className="text-sm font-bold text-secondary-100 text-left">{faq.question}</h3>
+                    <div className={`text-primary transition-transform duration-200 ${openFAQ === index ? 'transform rotate-180' : ''}`}>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </button>
+                  {openFAQ === index && (
+                    <div className="px-6 pb-4">
+                      <p className="text-xs leading-relaxed text-secondary-600">{faq.answer}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Emergency Contact */}
-        <section className="py-12 bg-red-50 border-t border-light-yellow border-b border-light-yellow">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-red-100 border border-red-200 rounded-xl p-8">
-              <div className="text-4xl mb-4">🚨</div>
-              <h2 className="text-2xl font-bold text-red-700 mb-4">Emergency Bike Service</h2>
-              <p className="text-red-600 mb-6">
-                Stuck on the road with a bike breakdown? Our emergency response team is available 24/7
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="tel:+919876543210"
-                  className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
-                >
-                  Call Emergency: +91 98765 43210
-                </a>
-                <a 
-                  href="https://wa.me/919876543210"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
-                >
-                  WhatsApp Emergency
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Map Section */}
-        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-4">Our Service Area</h2>
-              <p className="text-lg text-secondary-600">We cover all areas across Coimbatore</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-              <div className="h-64 bg-secondary-300/20 rounded-lg flex items-center justify-center mb-6">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🗺️</div>
-                  <p className="text-lg text-secondary-600">Interactive map coming soon</p>
-                  <p className="text-sm text-secondary-600 mt-2">Currently serving all areas within Coimbatore city limits</p>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div className="bg-primary/20 rounded-lg p-3">
-                  <div className="font-semibold text-secondary-100">RS Puram</div>
-                  <div className="text-secondary-600">15-25 min</div>
-                </div>
-                <div className="bg-primary/20 rounded-lg p-3">
-                  <div className="font-semibold text-secondary-100">Gandhipuram</div>
-                  <div className="text-secondary-600">20-30 min</div>
-                </div>
-                <div className="bg-primary/20 rounded-lg p-3">
-                  <div className="font-semibold text-secondary-100">Peelamedu</div>
-                  <div className="text-secondary-600">25-35 min</div>
-                </div>
-                <div className="bg-primary/20 rounded-lg p-3">
-                  <div className="font-semibold text-secondary-100">Saibaba Colony</div>
-                  <div className="text-secondary-600">20-30 min</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Download App Section */}
+        <DownloadAppSection />
       </Layout>
     </>
   );

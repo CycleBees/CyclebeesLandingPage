@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const DownloadSection: React.FC = () => {
+const DownloadAppSection: React.FC = () => {
   const downloadButtonStyles = "bg-secondary-100 text-white px-4 py-2 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold text-sm shadow-md hover:shadow-lg transform hover:scale-105 flex items-center justify-center";
 
   const handleDownloadApp = (platform: 'android' | 'ios') => {
@@ -74,4 +74,4 @@ const DownloadSection: React.FC = () => {
   );
 };
 
-export default DownloadSection;
+export default DownloadAppSection;

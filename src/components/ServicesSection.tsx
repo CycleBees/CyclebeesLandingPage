@@ -54,16 +54,16 @@ Please contact me for more details.`;
   };
 
   return (
-    <section id="services" className="bg-white py-8 sm:py-6 border-t border-light-yellow border-b border-light-yellow">
+    <section id="services" className="bg-white py-8 sm:py-6 my-5 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 lg:items-start">
           <div className="lg:col-span-3">
             <div className="mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">
                 Bicycle Services at Home
               </h2>
-              <p className="text-lg text-secondary-600">
-                Door-step Repair service - Coimbatore ready service
+              <p className="text-sm text-secondary-600">
+                Professional door-step repair service across Coimbatore
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">

@@ -50,32 +50,32 @@ const Footer: React.FC = () => {
     <footer className="bg-secondary-100 text-white">
       <div className="border-t border-secondary-600 opacity-30"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-2 mb-3">
               <Image
                 src="/logo.webp"
                 alt="CycleBees Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10"
+                width={32}
+                height={32}
+                className="w-8 h-8"
               />
-              <span className="text-xl font-bold text-primary">CycleBees</span>
+              <span className="text-lg font-bold text-primary">CycleBees</span>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
-              Professional bicycle mechanics at your doorstep. We provide quality repairs, rentals, and coaching services to get you back on the road quickly and safely.
+            <p className="text-gray-300 text-sm leading-relaxed max-w-md pr-4">
+              Professional bicycle services at your doorstep. Quality repairs, rentals, and coaching - trusted by riders across Coimbatore.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-semibold mb-3 text-sm">Quick Links</h3>
+            <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-primary transition-colors duration-200 text-xs"
                   >
                     {link.name}
                   </Link>
@@ -85,23 +85,23 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Address</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              No 29-30, RAC Road,<br />
-              SAIBABA MISSION,<br />
-              COIMBATORE, INDIA<br />
-              641011
-            </p>
+            <h3 className="text-white font-semibold mb-3 text-sm">Contact</h3>
+            <div className="space-y-1 text-xs text-gray-300">
+              <p>+91 95973 12212</p>
+              <p>mail@cyclebees.in</p>
+              <p>RS Puram, Coimbatore</p>
+              <p>Tamil Nadu - 641002</p>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-semibold mb-3 text-sm">Legal</h3>
+            <ul className="space-y-1">
               {policies.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-primary transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-primary transition-colors duration-200 text-xs"
                   >
                     {link.name}
                   </Link>
@@ -109,33 +109,14 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-2">
-              <div>
-                <span className="text-gray-400 text-sm">Phone:</span>
-                <p className="text-gray-300 text-sm">+91 95973 12212</p>
-              </div>
-              <div>
-                <span className="text-gray-400 text-sm">Email:</span>
-                <Link
-                  href="mailto:mail@cyclebees.in"
-                  className="text-primary hover:text-primary/80 text-sm block transition-colors duration-200"
-                >
-                  mail@cyclebees.in
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div className="border-t border-secondary-600 mt-8 pt-8">
+        <div className="border-t border-secondary-600 mt-6 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2025 CycleBees • Coimbatore, India
+            <p className="text-gray-400 text-xs">
+              © 2025 CycleBees • Professional Bicycle Services • Coimbatore, India
             </p>
-            <p className="text-gray-400 text-sm mt-2 md:mt-0">
+            <p className="text-gray-400 text-xs mt-1 md:mt-0">
               All rights reserved
             </p>
           </div>

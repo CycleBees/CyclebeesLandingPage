@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
+import DownloadAppSection from '@/components/DownloadAppSection';
 
 const AboutPage: React.FC = () => {
   const founders = [
@@ -67,25 +68,25 @@ const AboutPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="min-h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16 border-b border-light-yellow">
+        <section className="min-h-[30vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
                 About CycleBees
               </h1>
-              <p className="text-xl text-secondary-100/90 max-w-3xl mx-auto">
-                Revolutionizing bike service with passion, expertise, and innovation since 2020
+              <p className="text-lg text-secondary-100/90 max-w-2xl mx-auto">
+                Professional bicycle services with passion, expertise, and innovation since 2020
               </p>
             </div>
           </div>
         </section>
 
         {/* Our Story */}
-        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-6">Our Story</h2>
-              <div className="text-lg text-secondary-600 space-y-6 leading-relaxed">
+              <h2 className="section-title">Our Story</h2>
+              <div className="body-text space-y-6 text-center">
                 <p>
                   CycleBees was born from a simple frustration shared by every cyclist - the hassle of getting quality bike service. 
                   Long queues at repair shops, unreliable service quality, and the inconvenience of transporting bikes led our founders 
@@ -106,17 +107,17 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Founders Section */}
-        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-gradient-to-br from-secondary-300/20 to-primary/10 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-4">Meet Our Founders</h2>
-              <p className="text-lg text-secondary-600">The visionary team behind CycleBees</p>
+              <h2 className="section-title">Meet Our Founders</h2>
+              <p className="section-subtitle">The visionary team behind CycleBees</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {founders.map((founder, index) => (
-                <div key={index} className="bg-white rounded-xl p-8 text-center shadow-lg">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-secondary-300/20">
+                <div key={index} className="bg-white rounded-xl p-8 text-center shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-primary/20 ring-4 ring-primary/20">
                     <Image
                       src={founder.image}
                       alt={founder.name}
@@ -125,9 +126,9 @@ const AboutPage: React.FC = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-secondary-100 mb-2">{founder.name}</h3>
+                  <h3 className="card-title">{founder.name}</h3>
                   <p className="text-primary font-semibold mb-4">{founder.role}</p>
-                  <p className="text-secondary-600 text-sm leading-relaxed">{founder.bio}</p>
+                  <p className="small-text leading-relaxed">{founder.bio}</p>
                 </div>
               ))}
             </div>
@@ -135,21 +136,22 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="text-center md:text-left">
-                <h2 className="text-3xl font-bold text-secondary-100 mb-6">Our Mission</h2>
-                <p className="text-lg text-secondary-600 leading-relaxed">
-                  To make professional bike service accessible, convenient, and reliable for every cyclist. 
-                  We believe that quality bike maintenance should never be a barrier to enjoying the freedom 
-                  and joy of cycling.
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="bg-gradient-to-br from-primary/5 to-secondary-100/5 rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-2xl mx-auto mb-6">🎯</div>
+                <h2 className="subsection-title">Our Mission</h2>
+                <p className="body-text">
+                  To make professional bicycle service accessible, convenient, and reliable for every cyclist. 
+                  Quality bike maintenance should never be a barrier to enjoying the freedom and joy of cycling.
                 </p>
               </div>
-              <div className="text-center md:text-left">
-                <h2 className="text-3xl font-bold text-secondary-100 mb-6">Our Vision</h2>
-                <p className="text-lg text-secondary-600 leading-relaxed">
-                  To become India&apos;s most trusted bike service platform, fostering a culture where cycling is 
+              <div className="bg-gradient-to-br from-secondary-100/5 to-primary/5 rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">🔭</div>
+                <h2 className="subsection-title">Our Vision</h2>
+                <p className="body-text">
+                  To become India's most trusted bicycle service platform, fostering a culture where cycling is 
                   the preferred mode of transport through exceptional service, innovation, and community building.
                 </p>
               </div>
@@ -158,11 +160,11 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Values */}
-        <section className="py-12 bg-secondary-100 border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-gradient-to-br from-secondary-100 to-secondary-400 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Our Values</h2>
-              <p className="text-lg text-white/90">The principles that guide everything we do</p>
+              <h2 className="section-title text-white">Our Values</h2>
+              <p className="section-subtitle text-white/90">The principles that guide everything we do</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -178,11 +180,11 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary-100 mb-4">Our Journey</h2>
-              <p className="text-lg text-secondary-600">Key milestones in the CycleBees story</p>
+              <h2 className="section-title">Our Journey</h2>
+              <p className="section-subtitle">Key milestones in the CycleBees story</p>
             </div>
             
             <div className="space-y-8">
@@ -194,8 +196,8 @@ const AboutPage: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-secondary-100 mb-2">{milestone.title}</h3>
-                    <p className="text-secondary-600 leading-relaxed">{milestone.description}</p>
+                    <h3 className="card-title">{milestone.title}</h3>
+                    <p className="small-text leading-relaxed">{milestone.description}</p>
                   </div>
                 </div>
               ))}
@@ -204,52 +206,55 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Stats */}
-        <section className="py-12 bg-primary border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-12 my-5 bg-gradient-to-br from-primary to-secondary-200 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-3xl md:text-4xl font-bold text-secondary-100 mb-2">1000+</div>
-                <div className="text-secondary-100/80">Services Completed</div>
+                <div className="small-text text-secondary-100/80">Services Completed</div>
               </div>
-              <div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-3xl md:text-4xl font-bold text-secondary-100 mb-2">4.8★</div>
-                <div className="text-secondary-100/80">Average Rating</div>
+                <div className="small-text text-secondary-100/80">Average Rating</div>
               </div>
-              <div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-3xl md:text-4xl font-bold text-secondary-100 mb-2">15+</div>
-                <div className="text-secondary-100/80">Expert Mechanics</div>
+                <div className="small-text text-secondary-100/80">Expert Mechanics</div>
               </div>
-              <div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-3xl md:text-4xl font-bold text-secondary-100 mb-2">24/7</div>
-                <div className="text-secondary-100/80">Support Available</div>
+                <div className="small-text text-secondary-100/80">Support Available</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-12 bg-white border-t border-light-yellow">
+        <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-secondary-100 mb-4">Join the CycleBees Family</h2>
-            <p className="text-lg text-secondary-600 mb-8">
+            <h2 className="text-lg md:text-xl font-bold text-secondary-100 mb-3">Join the CycleBees Family</h2>
+            <p className="text-sm text-secondary-600 mb-6">
               Experience the difference that passion, expertise, and innovation can make
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.location.href = '/services'}
-                className="bg-primary text-secondary-100 px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
+                className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm"
               >
                 Book a Service
               </button>
               <button 
                 onClick={() => window.location.href = '/contact'}
-                className="bg-secondary-100 text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200"
+                className="bg-secondary-100 text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200 shadow-md text-sm"
               >
                 Get in Touch
               </button>
             </div>
           </div>
         </section>
+        
+        {/* Download App Section */}
+        <DownloadAppSection />
       </Layout>
     </>
   );

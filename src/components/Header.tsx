@@ -69,13 +69,14 @@ const Header: React.FC = () => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <button 
-              className="bg-secondary-100 text-white px-6 py-2 rounded-lg hover:bg-secondary-100/90 transition-colors duration-200 font-semibold"
+              className="relative bg-secondary-100 text-white px-6 py-2 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl group overflow-hidden"
               onClick={() => {
                 const element = document.getElementById('download');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Download App
+              <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-white/20 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+              <span className="relative z-10">Download App</span>
             </button>
           </div>
 
@@ -110,14 +111,15 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <button 
-                className="w-full mt-4 bg-secondary-100 text-white px-6 py-2 rounded-lg hover:bg-secondary-100/90 transition-colors duration-200 font-semibold"
+                className="relative w-full mt-4 bg-secondary-100 text-white px-6 py-2 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold shadow-lg group overflow-hidden"
                 onClick={() => {
                   setIsMenuOpen(false);
                   const element = document.getElementById('download');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Download App
+                <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-white/20 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+                <span className="relative z-10">Download App</span>
               </button>
             </div>
           </div>

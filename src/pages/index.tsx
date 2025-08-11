@@ -14,9 +14,9 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>CycleBees - Professional Bicycle Repair</title>
-        <meta name="description" content="Professional bicycle mechanics at your doorstep. Repairs, rentals & coaching in one tap. Download CycleBees app for Android & iOS." />
-        <meta name="keywords" content="bicycle repair, bike service, mobile mechanic, bike rental, cycling coach, Coimbatore" />
+        <title>CycleBees - Professional Bicycle Services</title>
+        <meta name="description" content="Premium bicycle services at your doorstep. Expert repairs, quality rentals & professional coaching. Trusted by riders across Coimbatore." />
+        <meta name="keywords" content="professional bicycle repair, premium bike service, expert mobile mechanic, quality bike rental, professional cycling coach, Coimbatore bicycle services" />
         <link rel="canonical" href="https://cyclebees.com" />
       </Head>
       

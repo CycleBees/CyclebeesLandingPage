@@ -60,13 +60,13 @@ const BenefitsSection: React.FC = () => {
   };
 
   return (
-    <section id="benefits" className="bg-gradient-to-br from-secondary-100 to-secondary-400 py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
+    <section id="benefits" className="bg-gradient-to-br from-secondary-100 to-secondary-400 py-10 sm:py-8 my-5 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
             Why Riders Love CycleBees
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+          <p className="text-sm text-white/90 max-w-xl mx-auto">
             Experience the difference with our professional service
           </p>
         </div>
