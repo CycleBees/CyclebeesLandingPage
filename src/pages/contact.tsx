@@ -88,7 +88,7 @@ const ContactPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16">
+        <section className="min-h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16 border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-4">
@@ -102,7 +102,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Contact Info */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {contactInfo.map((info, index) => (
@@ -120,7 +120,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Contact Form */}
-        <section className="py-16 bg-secondary-300/20">
+        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Send us a Message</h2>
@@ -228,7 +228,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Frequently Asked Questions</h2>
@@ -247,7 +247,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Emergency Contact */}
-        <section className="py-16 bg-red-50">
+        <section className="py-12 bg-red-50 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-red-100 border border-red-200 rounded-xl p-8">
               <div className="text-4xl mb-4">🚨</div>
@@ -276,7 +276,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Map Section */}
-        <section className="py-16 bg-secondary-300/20">
+        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Our Service Area</h2>

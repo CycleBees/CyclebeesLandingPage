@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 const BenefitsSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   
   const navButtonStyles = "w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200";
   
@@ -36,8 +38,29 @@ const BenefitsSection: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + benefits.length) % benefits.length);
   };
 
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+  };
+
   return (
-    <section id="benefits" className="min-h-[100vh] sm:min-h-[70vh] bg-gradient-to-br from-secondary-100 to-secondary-400 py-8 sm:py-4">
+    <section id="benefits" className="bg-gradient-to-br from-secondary-100 to-secondary-400 py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -63,7 +86,12 @@ const BenefitsSection: React.FC = () => {
 
         {/* Mobile Carousel View */}
         <div className="md:hidden">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+          <div 
+            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div className="text-4xl mb-4">{benefits[currentSlide].icon}</div>
             <h3 className="text-xl font-bold mb-3">{benefits[currentSlide].title}</h3>
             <p className="text-white/90 leading-relaxed mb-4 text-sm">
@@ -97,8 +125,8 @@ const BenefitsSection: React.FC = () => {
         <div className="mt-8 text-center">
           <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">500+</div>
-              <div className="text-sm text-white/80">Services Completed</div>
+              <div className="text-2xl font-bold text-primary">20+</div>
+              <div className="text-sm text-white/80">Repair Services Available</div>
             </div>
             <div className="w-px h-8 bg-white/20"></div>
             <div className="text-center">
@@ -108,7 +136,7 @@ const BenefitsSection: React.FC = () => {
             <div className="w-px h-8 bg-white/20"></div>
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-white/80">Support</div>
+              <div className="text-sm text-white/80">Including Emergency Support</div>
             </div>
           </div>
         </div>

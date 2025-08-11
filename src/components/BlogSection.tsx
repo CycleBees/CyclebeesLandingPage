@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const BlogSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % blogPosts.length);
@@ -10,6 +13,27 @@ const BlogSection: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + blogPosts.length) % blogPosts.length);
+  };
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
   };
 
   const navButtonStyles = "w-8 h-8 bg-secondary-100/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-secondary-100/30 transition-colors duration-200";
@@ -42,9 +66,9 @@ const BlogSection: React.FC = () => {
   ];
 
   return (
-    <section id="blog" className="min-h-[120vh] sm:min-h-[60vh] bg-secondary-300/20 py-8 sm:py-4">
+    <section id="blog" className="bg-secondary-300/20 py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
             Latest from the Hive
           </h2>
@@ -86,12 +110,15 @@ const BlogSection: React.FC = () => {
                   {post.excerpt}
                 </p>
                 
-                <button className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center">
+                <Link 
+                  href="/blog"
+                  className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center"
+                >
                   Read More
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </Link>
               </div>
             </article>
           ))}
@@ -99,7 +126,12 @@ const BlogSection: React.FC = () => {
 
         {/* Mobile Carousel View */}
         <div className="md:hidden mb-6">
-          <article className="bg-white rounded-xl overflow-hidden shadow-lg mb-4">
+          <article 
+            className="bg-white rounded-xl overflow-hidden shadow-lg mb-4"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div className="relative h-48 overflow-hidden">
               <Image
                 src={blogPosts[currentSlide].image}
@@ -129,12 +161,15 @@ const BlogSection: React.FC = () => {
                 {blogPosts[currentSlide].excerpt}
               </p>
               
-              <button className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center">
+              <Link 
+                href="/blog"
+                className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center"
+              >
                 Read More
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </article>
           
@@ -162,9 +197,12 @@ const BlogSection: React.FC = () => {
         </div>
 
         <div className="text-center mt-6">
-          <button className="bg-secondary-100 text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200">
+          <Link 
+            href="/blog"
+            className="inline-block bg-secondary-100 text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200"
+          >
             View All Articles
-          </button>
+          </Link>
         </div>
 
         <div className="mt-12 sm:mt-12">
@@ -172,7 +210,7 @@ const BlogSection: React.FC = () => {
           <div className="bg-gradient-to-r from-primary/10 via-secondary-300/20 to-primary/10 rounded-xl p-8 text-center">
             <div className="max-w-4xl mx-auto">
               <h3 className="text-3xl font-bold text-secondary-100 mb-4">
-                🚴‍♀️ Stay in the Loop
+                🚴‍♀️ Join Our Amazing Community
               </h3>
               <p className="text-secondary-600 mb-8 text-lg">
                 Subscribe to our newsletter for the latest cycling tips, maintenance guides, and exclusive CycleBees updates delivered to your inbox

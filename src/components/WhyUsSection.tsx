@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 const WhyUsSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % features.length);
@@ -9,6 +11,27 @@ const WhyUsSection: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+  };
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
   };
 
   const navButtonStyles = "w-8 h-8 bg-secondary-300/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-secondary-300/30 transition-colors duration-200";
@@ -33,9 +56,9 @@ const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="whyUs" className="min-h-[90vh] sm:min-h-[70vh] bg-white py-8 sm:py-4">
+    <section id="whyUs" className="bg-white py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
             The CycleBees Difference
           </h2>
@@ -69,7 +92,12 @@ const WhyUsSection: React.FC = () => {
 
         {/* Mobile Carousel View */}
         <div className="md:hidden flex-1">
-          <div className="bg-secondary-300/10 rounded-lg p-5 mb-4">
+          <div 
+            className="bg-secondary-300/10 rounded-lg p-5 mb-4"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div className="flex items-start space-x-3">
               <div className="flex-shrink-0">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-secondary-100 font-bold text-sm">

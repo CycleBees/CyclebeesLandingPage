@@ -28,7 +28,16 @@ body {
 }
 
 section {
-  min-height: 70vh;
+  min-height: auto;
+}
+
+/* Mobile optimized sections */
+@media (max-width: 768px) {
+  section {
+    min-height: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 /* Responsive breakpoints following the 12-column desktop / 4-column mobile grid */

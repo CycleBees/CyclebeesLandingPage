@@ -4,8 +4,7 @@ const ServicesSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    serviceType: '',
-    preferredDateTime: ''
+    serviceType: ''
   });
 
   const inputStyles = "w-full px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-primary text-sm";
@@ -19,7 +18,7 @@ const ServicesSection: React.FC = () => {
     { name: 'E-Bicycle Diagnostics', icon: '🔋' },
     { name: 'Periodic Service', icon: '📅' },
     { name: 'Full Overhaul', icon: '🔧' },
-    { name: 'Quick Wash', icon: '💧' },
+    { name: 'Bike Cleaning', icon: '🧽' },
     { name: 'Emergency On-Road Assist', icon: '🚨' }
   ];
 
@@ -32,21 +31,39 @@ const ServicesSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add form submission logic here
+    
+    // Create WhatsApp message
+    const message = `Hello CycleBees! I would like to enquire about your services.
+    
+Name: ${formData.name}
+Phone: ${formData.phone}
+Service Type: ${formData.serviceType}
+
+Please contact me for more details.`;
+    
+    // Send to WhatsApp
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919597312212&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      phone: '',
+      serviceType: ''
+    });
   };
 
   return (
-    <section id="services" className="min-h-[100vh] sm:min-h-[70vh] bg-white py-8 sm:py-2">
+    <section id="services" className="bg-white py-8 sm:py-6 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-8 lg:h-full lg:items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 lg:items-start">
           <div className="lg:col-span-3">
             <div className="mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
                 Bicycle Services at Home
               </h2>
               <p className="text-lg text-secondary-600">
-                Skip the shop queue—our certified mechanics come to you anywhere in Coimbatore.
+                Door-step Repair service - Coimbatore ready service
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
@@ -59,9 +76,9 @@ const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-2 mt-8 lg:mt-0">
-            <div className="bg-secondary-100 rounded-lg p-5 text-white max-w-full lg:max-w-sm lg:ml-auto">
-              <h3 className="text-lg font-bold mb-3">Book Now</h3>
+          <div className="lg:col-span-2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+            <div className="bg-secondary-100 rounded-lg p-5 text-white w-full max-w-sm">
+              <h3 className="text-lg font-bold mb-3">Enquire Now</h3>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <input
                   type="text"
@@ -92,27 +109,17 @@ const ServicesSection: React.FC = () => {
                   className={inputStyles}
                 >
                   <option value="" className="text-secondary-100">Select service</option>
-                  {services.slice(0, 5).map((service, index) => (
-                    <option key={index} value={service.name} className="text-secondary-100">
-                      {service.name}
-                    </option>
-                  ))}
+                  <option value="Repair Services" className="text-secondary-100">Repair Services</option>
+                  <option value="Rental Services" className="text-secondary-100">Rental Services</option>
+                  <option value="Courses Booking" className="text-secondary-100">Courses Booking</option>
+                  <option value="Business Enquiry" className="text-secondary-100">Business Enquiry</option>
                 </select>
-
-                <input
-                  type="datetime-local"
-                  name="preferredDateTime"
-                  value={formData.preferredDateTime}
-                  onChange={handleInputChange}
-                  required
-                  className={inputStyles}
-                />
 
                 <button
                   type="submit"
                   className="w-full bg-primary text-secondary-100 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 text-sm"
                 >
-                  Book Now
+                  Enquire Now
                 </button>
               </form>
             </div>

@@ -67,7 +67,7 @@ const AboutPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16">
+        <section className="min-h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16 border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-4">
@@ -81,7 +81,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Our Story */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-6">Our Story</h2>
@@ -106,7 +106,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Founders Section */}
-        <section className="py-16 bg-secondary-300/20">
+        <section className="py-12 bg-secondary-300/20 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Meet Our Founders</h2>
@@ -135,7 +135,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="text-center md:text-left">
@@ -158,7 +158,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Values */}
-        <section className="py-16 bg-secondary-100">
+        <section className="py-12 bg-secondary-100 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4">Our Values</h2>
@@ -178,7 +178,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Our Journey</h2>
@@ -204,7 +204,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Stats */}
-        <section className="py-16 bg-primary">
+        <section className="py-12 bg-primary border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
@@ -228,7 +228,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white border-t border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-secondary-100 mb-4">Join the CycleBees Family</h2>
             <p className="text-lg text-secondary-600 mb-8">

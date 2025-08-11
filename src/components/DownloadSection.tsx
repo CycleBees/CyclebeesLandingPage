@@ -5,17 +5,13 @@ const DownloadSection: React.FC = () => {
   const downloadButtonStyles = "bg-secondary-100 text-white px-8 py-4 rounded-xl hover:bg-secondary-100/90 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center";
 
   const handleDownloadApp = (platform: 'android' | 'ios') => {
-    const urls = {
-      android: 'https://play.google.com/store/apps',
-      ios: 'https://apps.apple.com'
-    };
-    window.open(urls[platform], '_blank');
+    alert('Coming Soon!');
   };
 
   return (
-    <section id="download" className="min-h-[100vh] sm:min-h-[70vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 py-8 sm:py-4">
+    <section id="download" className="bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 py-10 sm:py-8 border-t border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center min-h-[80vh] sm:min-h-[50vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
           <div className="text-center lg:text-left order-2 lg:order-1">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4 leading-tight">
               Ready to Ride?{' '}

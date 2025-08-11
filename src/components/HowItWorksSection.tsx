@@ -42,10 +42,10 @@ const HowItWorksSection: React.FC = () => {
   ];
 
   return (
-    <section id="howItWorks" className="min-h-[90vh] sm:min-h-[70vh] bg-white py-8 sm:py-1">
+    <section id="howItWorks" className="bg-white py-10 sm:py-8 border-t border-light-yellow border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-3">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
             How CycleBees Works
           </h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">

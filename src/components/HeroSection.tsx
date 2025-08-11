@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
   const buttonStyles = "bg-secondary-100 text-white px-6 py-3 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold shadow-lg";
 
   const handleDownloadApp = () => {
-    window.open('https://play.google.com/store/apps', '_blank');
+    alert('Coming Soon!');
   };
 
   const handleBookService = () => {
@@ -14,18 +14,18 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-[100vh] sm:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-20 sm:pt-16 pb-8">
+    <section id="hero" className="min-h-[80vh] sm:min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 sm:pt-16 pb-4 sm:pb-8 border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[50vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-100 mb-4 leading-tight">
-              Download{' '}
-              <span className="text-secondary-100">CycleBees</span>{' '}
-              for Bicycle Service
+              Your Ride.{' '}
+              <br />
+              <span className="text-secondary-100">Our Responsibility.</span>
             </h1>
             
             <p className="text-lg text-secondary-100/90 mb-6 max-w-xl">
-              Professional mechanics at your doorstep. Repairs, rentals & coaching in one tap.
+              Book Professional mechanics at your doorstep for Repair and Rentals for all kinds of bicycle
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">

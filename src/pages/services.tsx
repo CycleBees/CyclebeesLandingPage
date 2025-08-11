@@ -68,7 +68,7 @@ const ServicesPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16">
+        <section className="min-h-[50vh] bg-gradient-to-br from-primary to-secondary-100 pt-16 border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-4">
@@ -83,7 +83,7 @@ const ServicesPage: React.FC = () => {
 
         {/* Services Grid */}
         {serviceCategories.map((category, categoryIndex) => (
-          <section key={categoryIndex} className="py-16 bg-white">
+          <section key={categoryIndex} className="py-10 bg-white border-t border-light-yellow border-b border-light-yellow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-secondary-100 mb-4">{category.title}</h2>
@@ -107,7 +107,7 @@ const ServicesPage: React.FC = () => {
         ))}
 
         {/* Booking Form Section */}
-        <section className="py-16 bg-secondary-300/20">
+        <section className="py-10 bg-secondary-300/20 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Book Your Service</h2>
@@ -223,7 +223,7 @@ const ServicesPage: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 bg-white">
+        <section className="py-10 bg-white border-t border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary-100 mb-4">Why Choose CycleBees?</h2>

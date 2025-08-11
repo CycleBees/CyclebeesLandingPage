@@ -11,8 +11,9 @@ const Footer: React.FC = () => {
   ];
 
   const policies = [
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'Refund Policy', href: '/refund' },
   ];
 
   const socialLinks = [
@@ -84,7 +85,17 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Policies</h3>
+            <h3 className="text-white font-semibold mb-4">Address</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              No 29-30, RAC Road,<br />
+              SAIBABA MISSION,<br />
+              COIMBATORE, INDIA<br />
+              641011
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               {policies.map((link) => (
                 <li key={link.name}>
@@ -100,18 +111,21 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
+            <div className="space-y-2">
+              <div>
+                <span className="text-gray-400 text-sm">Phone:</span>
+                <p className="text-gray-300 text-sm">+91 95973 12212</p>
+              </div>
+              <div>
+                <span className="text-gray-400 text-sm">Email:</span>
                 <Link
-                  key={social.name}
-                  href={social.href}
-                  className="text-gray-300 hover:text-primary transition-colors duration-200"
-                  aria-label={social.name}
+                  href="mailto:mail@cyclebees.in"
+                  className="text-primary hover:text-primary/80 text-sm block transition-colors duration-200"
                 >
-                  {social.icon}
+                  mail@cyclebees.in
                 </Link>
-              ))}
+              </div>
             </div>
           </div>
         </div>
