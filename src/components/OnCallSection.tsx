@@ -28,6 +28,11 @@ const OnCallSection: React.FC = () => {
       title: 'Sit & Relax',
       description: 'Enjoy your coffee while we service your ride at your doorstep.',
       icon: '☕'
+    },
+    {
+      title: 'Professional Quality',
+      description: 'Certified mechanics with premium tools ensure your bike gets expert care.',
+      icon: '🔧'
     }
   ];
 
@@ -42,7 +47,7 @@ const OnCallSection: React.FC = () => {
         </div>
 
         {/* Desktop Grid View */}
-        <div className="hidden md:grid grid-cols-3 gap-6 flex-1 items-center mb-4">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1 items-center mb-4">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
               <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">

@@ -82,17 +82,27 @@ const ServicesPage: React.FC = () => {
         </section>
 
         {/* Booking Form Section */}
-        <section className="py-8 my-3 bg-gradient-to-br from-secondary-100/5 to-primary/5 border-t border-light-yellow border-b border-light-yellow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-8 my-3 bg-gradient-to-br from-secondary-100/5 to-primary/5 border-t border-light-yellow border-b border-light-yellow relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/cyclebees_services_page.webp"
+              alt="CycleBees Services"
+              className="w-full h-full object-cover object-left-center"
+            />
+            <div className="absolute inset-0 bg-white/90"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
               {/* Left Column - Info Cards */}
-              <div className="space-y-6">
-                <div className="text-center mb-6">
+              <div className="space-y-4">
+                <div className="text-center mb-4">
                   <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-2">Service Information</h2>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-3">
                   <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
                     <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">📍</div>
                     <h3 className="text-sm font-bold text-secondary-100 mb-1">Service Areas</h3>
@@ -118,7 +128,7 @@ const ServicesPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="text-center mt-8">
+                <div className="text-center mt-6">
                   <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-2">Book Your Service</h2>
                   <p className="text-base text-secondary-600">Quick response within 30 minutes</p>
                 </div>
@@ -271,6 +281,30 @@ const ServicesPage: React.FC = () => {
                 <div className="mt-2 text-primary font-bold text-sm">30-45 Min</div>
                 <div className="text-sm text-white/80">Average Response</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Join the CycleBees Family</h2>
+            <p className="text-base text-secondary-600 mb-6">
+              Experience the difference that passion, expertise, and innovation can make
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => window.location.href = '/services'}
+                className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-base"
+              >
+                Book a Service
+              </button>
+              <button 
+                onClick={() => window.location.href = '/contact'}
+                className="bg-secondary-100 text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200 shadow-md text-base"
+              >
+                Get in Touch
+              </button>
             </div>
           </div>
         </section>

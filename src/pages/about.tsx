@@ -97,15 +97,15 @@ const AboutPage: React.FC = () => {
               </div>
               
               <div className="relative flex justify-center lg:justify-end">
-                <div className="relative max-w-[300px] lg:max-w-[400px]">
+                <div className="relative max-w-[350px] lg:max-w-[450px]">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary-100/20 blur-2xl rounded-full transform scale-110"></div>
-                  <div className="relative z-10 bg-white rounded-xl shadow-xl p-8 border border-primary/20">
-                    <div className="w-full h-64 bg-gradient-to-br from-primary/10 to-secondary-100/10 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4">🚴‍♂️</div>
-                        <p className="text-sm text-secondary-600">Cycling Image Placeholder</p>
-                        <p className="text-xs text-secondary-500 mt-2">Will be replaced with actual cycling image</p>
-                      </div>
+                  <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
+                    <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-secondary-100/10 rounded-xl overflow-hidden">
+                      <img
+                        src="/cyclebees_Contact_Page_Image_1.webp"
+                        alt="CycleBees Cycling"
+                        className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
                   </div>
                 </div>
