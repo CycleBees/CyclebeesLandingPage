@@ -18,13 +18,13 @@ const ContactPage: React.FC = () => {
   const contactInfo = [
     {
       title: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 95973 12212',
       icon: '📞',
       description: 'Available 24/7 for emergencies'
     },
     {
       title: 'Email', 
-      value: 'hello@cyclebees.com',
+      value: 'mail@cyclebees.in',
       icon: '✉️',
       description: 'We reply within 2 hours'
     },
@@ -90,7 +90,7 @@ const ContactPage: React.FC = () => {
       
       <Layout>
         {/* Hero Section */}
-        <section className="min-h-[30vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow">
+        <section className="min-h-[30vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
@@ -104,156 +104,146 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-12 my-5 bg-white border-t border-light-yellow border-b border-light-yellow">
+        <section className="py-8 my-3 bg-gradient-to-br from-secondary-100/5 to-primary/5 border-t border-light-yellow border-b border-light-yellow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
               {/* Left Column - Contact Info */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-lg md:text-xl font-bold text-secondary-100 mb-3">Office Address</h2>
-                  <div className="bg-gradient-to-br from-primary/5 to-secondary-100/5 rounded-lg p-4 border border-primary/10">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-lg flex-shrink-0">🏢</div>
-                      <div>
-                        <h3 className="text-lg font-bold text-secondary-100 mb-2">CycleBees Office</h3>
-                        <p className="text-sm text-secondary-600 mb-3">RS Puram, Coimbatore<br/>Tamil Nadu - 641002</p>
-                        <div className="space-y-1 text-xs">
-                          <div className="flex items-center space-x-2">
-                            <span className="text-primary">📞</span>
-                            <span>+91 95973 12212</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-primary">✉️</span>
-                            <span>mail@cyclebees.in</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-primary">🕐</span>
-                            <span>6 AM - 10 PM (24/7 Emergency)</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div className="space-y-6">
+                <div className="text-center mb-6">
+                  <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-2">Contact Information</h2>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">📞</div>
+                    <h3 className="text-sm font-bold text-secondary-100 mb-1">Phone</h3>
+                    <p className="text-xs text-secondary-600">+91 95973 12212<br/>Available 24/7</p>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">✉️</div>
+                    <h3 className="text-sm font-bold text-secondary-100 mb-1">Email</h3>
+                    <p className="text-xs text-secondary-600">mail@cyclebees.in<br/>Reply within 2 hours</p>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">📍</div>
+                    <h3 className="text-sm font-bold text-secondary-100 mb-1">Address</h3>
+                    <p className="text-xs text-secondary-600">Coimbatore, Tamil Nadu<br/>Service across city</p>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">🕐</div>
+                    <h3 className="text-sm font-bold text-secondary-100 mb-1">Hours</h3>
+                    <p className="text-xs text-secondary-600">6 AM - 10 PM<br/>Emergency 24/7</p>
                   </div>
                 </div>
 
-                {/* Quick Contact Options */}
-                <div>
-                  <h3 className="text-lg font-bold text-secondary-100 mb-3">Quick Contact</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    <a href="tel:+919597312212" className="bg-green-600 text-white px-3 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 text-center flex items-center justify-center space-x-1 text-sm">
-                      <span>📞</span>
-                      <span>Call</span>
-                    </a>
-                    <a href="https://wa.me/919597312212" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 text-center flex items-center justify-center space-x-1 text-sm">
-                      <span>📱</span>
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
+                <div className="text-center mt-6">
+                  <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-2">Send us a Message</h2>
+                  <p className="text-base text-secondary-600">Professional support - We respond within 2 hours</p>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div>
-                <h2 className="section-title text-center mb-6">Send us a Message</h2>
-                <p className="section-subtitle text-center mb-8">Professional support - We respond within 2 hours</p>
-
-                <div className="bg-white rounded-xl shadow-xl border border-primary/10 p-6">
-              {isSubmitted ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
-                    ✅
-                  </div>
-                  <h3 className="text-2xl font-bold text-green-600 mb-2">Message Sent!</h3>
-                  <p className="text-secondary-600">Thank you for contacting us. We'll get back to you soon.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Enter your full name"
-                      />
+              <div className="flex items-start">
+                <div className="bg-white rounded-xl shadow-xl border border-primary/20 p-6 w-full">
+                  {isSubmitted ? (
+                    <div className="text-center py-6">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                        ✅
+                      </div>
+                      <h3 className="text-xl font-bold text-green-600 mb-2">Message Sent!</h3>
+                      <p className="text-sm text-secondary-600">Thank you for contacting us. We'll get back to you soon.</p>
                     </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-2">Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Enter your email"
-                      />
-                    </div>
-                  </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-secondary-100 mb-1">Full Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                            placeholder="Enter your full name"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label className="block text-sm font-medium text-secondary-100 mb-1">Email Address</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                            placeholder="Enter your email"
+                          />
+                        </div>
+                      </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-2">Phone Number</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="+91 XXXXXXXXXX"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-2">Subject</label>
-                      <select
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="service-inquiry">Service Inquiry</option>
-                        <option value="booking-support">Booking Support</option>
-                        <option value="technical-issue">Technical Issue</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                  </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-secondary-100 mb-1">Phone Number</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                            placeholder="+91 XXXXXXXXXX"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label className="block text-sm font-medium text-secondary-100 mb-1">Subject</label>
+                          <select
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                          >
+                            <option value="">Select a subject</option>
+                            <option value="service-inquiry">Service Inquiry</option>
+                            <option value="booking-support">Booking Support</option>
+                            <option value="technical-issue">Technical Issue</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-secondary-100 mb-2">Message</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                      placeholder="Tell us how we can help you..."
-                    />
-                  </div>
+                      <div>
+                        <label className="block text-sm font-medium text-secondary-100 mb-1">Message</label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          required
+                          rows={3}
+                          className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none text-sm bg-gray-50/50"
+                          placeholder="Tell us how we can help you..."
+                        />
+                      </div>
 
-                  <div className="text-center">
-                    <button
-                      type="submit"
-                      className="bg-primary text-secondary-100 px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-lg"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              )}
+                      <div className="text-center pt-2">
+                        <button
+                          type="submit"
+                          className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl text-sm transform hover:scale-105"
+                        >
+                          Send Message
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </div>
             </div>
@@ -265,7 +255,7 @@ const ContactPage: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Frequently Asked Questions</h2>
-              <p className="text-sm text-secondary-600">Quick answers to common questions</p>
+              <p className="text-base text-secondary-600">Quick answers to common questions</p>
             </div>
 
             <div className="space-y-4">
@@ -275,7 +265,7 @@ const ContactPage: React.FC = () => {
                     onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-secondary-300/5 transition-colors duration-200"
                   >
-                    <h3 className="text-sm font-bold text-secondary-100 text-left">{faq.question}</h3>
+                    <h3 className="text-base font-bold text-secondary-100 text-left">{faq.question}</h3>
                     <div className={`text-primary transition-transform duration-200 ${openFAQ === index ? 'transform rotate-180' : ''}`}>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -284,7 +274,7 @@ const ContactPage: React.FC = () => {
                   </button>
                   {openFAQ === index && (
                     <div className="px-6 pb-4">
-                      <p className="text-xs leading-relaxed text-secondary-600">{faq.answer}</p>
+                      <p className="text-sm leading-relaxed text-secondary-600">{faq.answer}</p>
                     </div>
                   )}
                 </div>
@@ -292,7 +282,6 @@ const ContactPage: React.FC = () => {
             </div>
           </div>
         </section>
-
 
         {/* Download App Section */}
         <DownloadAppSection />
