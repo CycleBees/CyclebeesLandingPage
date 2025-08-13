@@ -16,7 +16,7 @@ const OnCallSection: React.FC = () => {
   const benefits = [
     {
       title: 'Less Time Consuming',
-      description: 'Get back on the road in under 60 minutes on average.',
+      description: 'Average arrival: ~60 minutes (we provide a 60–90 minute arrival window at booking).',
       icon: '⏱️'
     },
     {
@@ -103,7 +103,7 @@ const OnCallSection: React.FC = () => {
         <div className="text-center">
           <div className="inline-flex items-center space-x-3 bg-primary/10 rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-            <span className="text-secondary-100 font-semibold text-sm">Available 24/7 across Coimbatore</span>
+            <span className="text-secondary-100 font-semibold text-sm">Regular bookings: 6:00 AM — 10:00 PM • Emergency on-road assist: available 24/7</span>
           </div>
         </div>
       </div>

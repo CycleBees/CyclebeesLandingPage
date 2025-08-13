@@ -20,7 +20,7 @@ const DownloadSection: React.FC = () => {
             </h2>
             
             <p className="text-sm text-secondary-100/90 mb-4 leading-relaxed max-w-lg">
-              Join thousands of satisfied riders who trust CycleBees. Download now and get your first service at special discount!
+              ✨ 1000+ riders trust CycleBees. Download now and get your first service at special discount!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-4">

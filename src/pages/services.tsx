@@ -13,6 +13,8 @@ const ServicesPage: React.FC = () => {
     bikeType: ''
   });
 
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
   const repairServices = [
     { name: 'Chain Repair', icon: '🔗', description: 'Professional chain cleaning, lubrication and replacement services' },
     { name: 'Brake Tuning', icon: '🛑', description: 'Complete brake adjustment and safety inspection for optimal stopping power' },
@@ -114,23 +116,33 @@ const ServicesPage: React.FC = () => {
                     <h3 className="text-sm font-bold text-secondary-100 mb-1">Contact Information</h3>
                     <p className="text-xs text-secondary-600">Phone: +91 95973 12212<br/>Email: mail@cyclebees.in</p>
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-3 mt-4">
+                  <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">💰</div>
+                    <h3 className="text-sm font-bold text-secondary-100 mb-1">Visit Fee</h3>
+                    <p className="text-xs text-secondary-600">Visit fee: ₹250 (technician callout; parts & replacements billed separately with an upfront quote)</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
                   
                   <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
                     <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">⏰</div>
                     <h3 className="text-sm font-bold text-secondary-100 mb-1">Service Hours</h3>
-                    <p className="text-xs text-secondary-600">Regular: 6 AM - 10 PM<br/>Emergency: 24/7 Available</p>
+                    <p className="text-xs text-secondary-600">Regular bookings: 6:00 AM — 10:00 PM<br/>Emergency on-road assist: available 24/7</p>
                   </div>
                   
                   <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
                     <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">🚀</div>
                     <h3 className="text-sm font-bold text-secondary-100 mb-1">Response Time</h3>
-                    <p className="text-xs text-secondary-600">Average 30-45 minutes within city</p>
+                    <p className="text-xs text-secondary-600">Avg arrival: ~60 minutes (we provide a 60–90 minute arrival window at booking)</p>
                   </div>
                 </div>
 
                 <div className="text-center mt-6">
                   <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-2">Book Your Service</h2>
-                  <p className="text-base text-secondary-600">Quick response within 30 minutes</p>
                 </div>
               </div>
               
@@ -232,6 +244,7 @@ const ServicesPage: React.FC = () => {
                     </div>
 
                     <div className="text-center pt-2">
+                      <p className="text-xs text-secondary-600 mb-3">Visit fee: ₹250 • Estimated arrival: ~60 minutes (60–90 min window)</p>
                       <button
                         type="submit"
                         className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl text-sm transform hover:scale-105"
@@ -258,9 +271,7 @@ const ServicesPage: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-200">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl mx-auto mb-3">👨‍🔧</div>
                 <h3 className="text-base font-bold text-white mb-2">Certified Technicians</h3>
-                <p className="text-sm text-white/90">Expert mechanics with years of experience</p>
-                <div className="mt-2 text-primary font-bold text-sm">5+ Years</div>
-                <div className="text-sm text-white/80">Certified</div>
+                <p className="text-sm text-white/90">Background-checked and trained through the CycleBees Academy</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-200">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl mx-auto mb-3">💰</div>
@@ -278,36 +289,73 @@ const ServicesPage: React.FC = () => {
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl mx-auto mb-3">🚀</div>
                 <h3 className="text-base font-bold text-white mb-2">Fast Response</h3>
                 <p className="text-sm text-white/90">Quick doorstep service with professional equipment</p>
-                <div className="mt-2 text-primary font-bold text-sm">30-45 Min</div>
-                <div className="text-sm text-white/80">Average Response</div>
+                <div className="mt-2 text-primary font-bold text-sm">Avg arrival: ~60 minutes</div>
+                <div className="text-sm text-white/80">(60–90 min window)</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Join the CycleBees Family</h2>
-            <p className="text-base text-secondary-600 mb-6">
-              Experience the difference that passion, expertise, and innovation can make
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.location.href = '/services'}
-                className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-base"
-              >
-                Book a Service
-              </button>
-              <button 
-                onClick={() => window.location.href = '/contact'}
-                className="bg-secondary-100 text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200 shadow-md text-base"
-              >
-                Get in Touch
-              </button>
+        {/* FAQ Section */}
+        <section className="py-8 my-3 bg-secondary-300/10 border-t border-light-yellow border-b border-light-yellow">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Frequently Asked Questions</h2>
+              <p className="text-base text-secondary-600">Quick answers to common questions</p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  question: 'How quickly can you reach my location?',
+                  answer: 'For scheduled bookings we provide a 60–90 minute arrival window and show live ETA in the app. For emergency on-road assist use the in-app emergency button or call/WhatsApp the urgent line — emergency support is available 24/7.'
+                },
+                {
+                  question: 'Is there a service charge for coming to my location?',
+                  answer: 'Yes — a visit fee of ₹250 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
+                },
+                {
+                  question: 'What types of bicycles do you service?',
+                  answer: 'We service kid\'s bikes, commuters, hybrid, road, MTB and e-bikes (including e-bike diagnostics and common electric system checks).'
+                },
+                {
+                  question: 'What workmanship guarantee do you provide?',
+                  answer: 'Every repair includes a 7-day workmanship guarantee. If the issue recurs within that window, we\'ll re-service it at no additional labour cost.'
+                },
+                {
+                  question: 'How do I book a service or get urgent help?',
+                  answer: 'Book via the CycleBees app (iOS/Android) or on the website. For urgent on-road assistance use the in-app emergency button or call/WhatsApp +91 95973 12212.'
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white border border-secondary-300/20 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                  <button
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-secondary-300/5 transition-colors duration-200"
+                  >
+                    <h3 className="text-base font-bold text-secondary-100 pr-4">{faq.question}</h3>
+                    <div className={`text-primary transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`}>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </button>
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-out ${
+                      openFAQ === index 
+                        ? 'max-h-64 opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-6 border-t border-secondary-300/20 bg-gradient-to-br from-primary/5 to-secondary-100/5">
+                      <p className="text-sm leading-relaxed text-secondary-600 pt-4">{faq.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
+
         
         {/* Download App Section */}
         <DownloadAppSection />

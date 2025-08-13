@@ -91,6 +91,7 @@ const Footer: React.FC = () => {
               <p>mail@cyclebees.in</p>
               <p>RS Puram, Coimbatore</p>
               <p>Tamil Nadu - 641002</p>
+              <p className="text-primary font-semibold mt-2">Visit fee: ₹250 (technician callout; parts & replacements billed separately with an upfront quote)</p>
             </div>
           </div>
 

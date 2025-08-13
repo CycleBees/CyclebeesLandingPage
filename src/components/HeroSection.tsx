@@ -38,9 +38,9 @@ const HeroSection: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start text-sm">
-              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">⭐ 4.8/5</span>
-              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">🚴 1000+ Riders</span>
-              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">⚡ 60min Service</span>
+              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">⭐ 4.8 / 5</span>
+              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">🚴 1000+ riders served</span>
+              <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-secondary-100">⏱️ Avg arrival: ~60 minutes</span>
             </div>
           </div>
 

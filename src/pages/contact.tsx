@@ -45,35 +45,23 @@ const ContactPage: React.FC = () => {
   const faqs = [
     {
       question: 'How quickly can you reach my location?',
-      answer: 'Our average response time is 30-45 minutes within Coimbatore city limits. For emergency services, we strive to reach within 20-30 minutes. We have strategically positioned mechanics across the city to ensure quick response times.'
-    },
-    {
-      question: 'Do you provide service on weekends and holidays?',
-      answer: 'Yes! We provide service 7 days a week including weekends and holidays. Our regular hours are 6 AM to 10 PM, with 24/7 emergency service available. We understand that bike issues don\'t wait for business hours, so we\'re always ready to help.'
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer: 'We accept multiple payment options for your convenience: Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit cards, and Mobile wallets. Payment is due after service completion and your satisfaction. We also provide digital receipts for all transactions.'
+      answer: 'For scheduled bookings we provide a 60–90 minute arrival window and show live ETA in the app. For emergency on-road assist, emergency support is available 24/7.'
     },
     {
       question: 'Is there a service charge for coming to my location?',
-      answer: 'No, we don\'t charge any extra fees for doorstep service within our standard service areas in Coimbatore. The price you see is what you pay - no hidden charges, no surprise fees. We believe in transparent pricing and honest service.'
+      answer: 'Yes — a visit fee of ₹250 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
     },
     {
-      question: 'What if I\'m not satisfied with the service?',
-      answer: 'We offer 100% satisfaction guarantee. If you\'re not happy with our service, we\'ll re-service your bike free of charge or provide a full refund. Your satisfaction is our top priority, and we stand behind the quality of our work.'
+      question: 'What payment methods do you accept?',
+      answer: 'We accept UPI, debit/credit cards, netbanking and major wallets through the app. Cash on completion is available in select cases.'
     },
     {
       question: 'What types of bicycles do you service?',
-      answer: 'We service all types of bicycles including Mountain bikes, Road bikes, Hybrid bikes, Electric bikes, Kids bikes, and BMX bikes. Our certified mechanics are trained to handle all brands and models with professional expertise.'
-    },
-    {
-      question: 'Do you provide bike rental services?',
-      answer: 'Yes, we offer premium bike rental services for various durations - hourly, daily, weekly, and monthly rentals. All rental bikes are regularly maintained and come with safety equipment. Perfect for tourists, fitness enthusiasts, or anyone wanting to explore Coimbatore on two wheels.'
+      answer: 'We service kid\'s bikes, commuters, hybrid, road, MTB and e-bikes (including e-bike diagnostics and common electric system checks).'
     },
     {
       question: 'How do I book a service appointment?',
-      answer: 'Booking is easy! You can book through our mobile app, call us directly at +91 95973 12212, use the contact form on this page, or message us on WhatsApp. We\'ll confirm your appointment and send you real-time updates about our mechanic\'s arrival.'
+      answer: 'Book via the CycleBees app (iOS/Android) or on the website. For urgent on-road assistance use the in-app emergency button or call/WhatsApp +91 95973 12212.'
     }
   ];
 
