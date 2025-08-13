@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
 import DownloadAppSection from '@/components/DownloadAppSection';
 
@@ -49,7 +50,7 @@ const ContactPage: React.FC = () => {
     },
     {
       question: 'Is there a service charge for coming to my location?',
-      answer: 'Yes — a visit fee of ₹250 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
+      answer: 'Yes — a visit fee of ₹299 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
     },
     {
       question: 'What payment methods do you accept?',
@@ -107,10 +108,12 @@ const ContactPage: React.FC = () => {
         <section className="py-8 my-3 bg-gradient-to-br from-secondary-100/5 to-primary/5 border-t border-light-yellow border-b border-light-yellow relative overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               src="/cyclebees_services_page.webp"
               alt="CycleBees Services"
-              className="w-full h-full object-cover object-left-center"
+              fill
+              className="object-cover object-left-center"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-white/90"></div>
           </div>
@@ -167,30 +170,36 @@ const ContactPage: React.FC = () => {
                       <p className="text-sm text-secondary-600">Thank you for contacting us. We'll get back to you soon.</p>
                 </div>
               ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4" role="form" aria-label="Contact form">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                          <label className="block text-sm font-medium text-secondary-100 mb-1">Full Name</label>
+                          <label htmlFor="contact-name" className="block text-sm font-medium text-secondary-100 mb-1">Full Name <span className="text-red-500 sr-only">required</span></label>
                       <input
+                        id="contact-name"
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                        aria-required="true"
+                        aria-describedby="name-error"
+                        className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                         placeholder="Enter your full name"
                       />
                     </div>
                     
                     <div>
-                          <label className="block text-sm font-medium text-secondary-100 mb-1">Email Address</label>
+                          <label htmlFor="contact-email" className="block text-sm font-medium text-secondary-100 mb-1">Email Address <span className="text-red-500 sr-only">required</span></label>
                       <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                        aria-required="true"
+                        aria-describedby="email-error"
+                        className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                         placeholder="Enter your email"
                       />
                     </div>
@@ -198,26 +207,32 @@ const ContactPage: React.FC = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                          <label className="block text-sm font-medium text-secondary-100 mb-1">Phone Number</label>
+                          <label htmlFor="contact-phone" className="block text-sm font-medium text-secondary-100 mb-1">Phone Number <span className="text-red-500 sr-only">required</span></label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                        aria-required="true"
+                        aria-describedby="phone-error"
+                        className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                         placeholder="+91 XXXXXXXXXX"
                       />
                     </div>
                     
                     <div>
-                          <label className="block text-sm font-medium text-secondary-100 mb-1">Subject</label>
+                          <label htmlFor="contact-subject" className="block text-sm font-medium text-secondary-100 mb-1">Subject <span className="text-red-500 sr-only">required</span></label>
                       <select
+                        id="contact-subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                            className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+                        aria-required="true"
+                        aria-describedby="subject-error"
+                        className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                       >
                         <option value="">Select a subject</option>
                         <option value="service-inquiry">Service Inquiry</option>
@@ -231,14 +246,17 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                        <label className="block text-sm font-medium text-secondary-100 mb-1">Message</label>
+                        <label htmlFor="contact-message" className="block text-sm font-medium text-secondary-100 mb-1">Message <span className="text-red-500 sr-only">required</span></label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                          rows={3}
-                          className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none text-sm bg-gray-50/50"
+                      aria-required="true"
+                      aria-describedby="message-error"
+                      rows={3}
+                      className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none text-sm bg-gray-50/50"
                       placeholder="Tell us how we can help you..."
                     />
                   </div>

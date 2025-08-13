@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
 import DownloadAppSection from '@/components/DownloadAppSection';
 
@@ -87,10 +88,12 @@ const ServicesPage: React.FC = () => {
         <section className="py-8 my-3 bg-gradient-to-br from-secondary-100/5 to-primary/5 border-t border-light-yellow border-b border-light-yellow relative overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               src="/cyclebees_services_page.webp"
               alt="CycleBees Services"
-              className="w-full h-full object-cover object-left-center"
+              fill
+              className="object-cover object-left-center"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-white/90"></div>
           </div>
@@ -122,7 +125,7 @@ const ServicesPage: React.FC = () => {
                   <div className="bg-white rounded-xl p-3 border border-primary/20 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/40 hover:scale-105 group">
                     <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">💰</div>
                     <h3 className="text-sm font-bold text-secondary-100 mb-1">Visit Fee</h3>
-                    <p className="text-xs text-secondary-600">Visit fee: ₹250 (technician callout; parts & replacements billed separately with an upfront quote)</p>
+                    <p className="text-xs text-secondary-600">Visit fee: ₹299 (technician callout; parts & replacements billed separately with an upfront quote)</p>
                   </div>
                 </div>
 
@@ -149,30 +152,35 @@ const ServicesPage: React.FC = () => {
               {/* Right Column - Form */}
               <div>
                 <div className="bg-white rounded-xl shadow-xl border border-primary/20 p-6">
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4" role="form" aria-label="Service booking form">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-secondary-100 mb-1">Full Name</label>
+                        <label htmlFor="service-name" className="block text-sm font-medium text-secondary-100 mb-1">Full Name <span className="text-red-500 sr-only">required</span></label>
                         <input
+                          id="service-name"
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
                           className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                           placeholder="Enter your name"
                         />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-secondary-100 mb-1">Phone Number</label>
+                        <label htmlFor="service-phone" className="block text-sm font-medium text-secondary-100 mb-1">Phone Number <span className="text-red-500 sr-only">required</span></label>
                         <input
+                          id="service-phone"
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
                           pattern="[0-9]{10}"
+                          aria-describedby="phone-help"
                           className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                           placeholder="+91 XXXXXXXXXX"
                         />
@@ -181,12 +189,14 @@ const ServicesPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-secondary-100 mb-1">Service Type</label>
+                        <label htmlFor="service-type" className="block text-sm font-medium text-secondary-100 mb-1">Service Type <span className="text-red-500 sr-only">required</span></label>
                         <select
+                          id="service-type"
                           name="serviceType"
                           value={formData.serviceType}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
                           className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                         >
                           <option value="">Select a service</option>
@@ -199,12 +209,14 @@ const ServicesPage: React.FC = () => {
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-secondary-100 mb-1">Bike Type</label>
+                        <label htmlFor="bike-type" className="block text-sm font-medium text-secondary-100 mb-1">Bike Type <span className="text-red-500 sr-only">required</span></label>
                         <select
+                          id="bike-type"
                           name="bikeType"
                           value={formData.bikeType}
                           onChange={handleInputChange}
                           required
+                          aria-required="true"
                           className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                         >
                           <option value="">Select bike type</option>
@@ -219,24 +231,28 @@ const ServicesPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-1">Preferred Date & Time</label>
+                      <label htmlFor="preferred-datetime" className="block text-sm font-medium text-secondary-100 mb-1">Preferred Date & Time <span className="text-red-500 sr-only">required</span></label>
                       <input
+                        id="preferred-datetime"
                         type="datetime-local"
                         name="preferredDateTime"
                         value={formData.preferredDateTime}
                         onChange={handleInputChange}
                         required
+                        aria-required="true"
                         className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-secondary-100 mb-1">Service Address</label>
+                      <label htmlFor="service-address" className="block text-sm font-medium text-secondary-100 mb-1">Service Address <span className="text-red-500 sr-only">required</span></label>
                       <textarea
+                        id="service-address"
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
                         required
+                        aria-required="true"
                         rows={2}
                         className="w-full px-3 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none text-sm bg-gray-50/50"
                         placeholder="Complete address where service is needed"
@@ -244,7 +260,7 @@ const ServicesPage: React.FC = () => {
                     </div>
 
                     <div className="text-center pt-2">
-                      <p className="text-xs text-secondary-600 mb-3">Visit fee: ₹250 • Estimated arrival: ~60 minutes (60–90 min window)</p>
+                      <p className="text-xs text-secondary-600 mb-3">Visit fee: ₹299 • Estimated arrival: ~60 minutes (60–90 min window)</p>
                       <button
                         type="submit"
                         className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl text-sm transform hover:scale-105"
@@ -312,7 +328,7 @@ const ServicesPage: React.FC = () => {
                 },
                 {
                   question: 'Is there a service charge for coming to my location?',
-                  answer: 'Yes — a visit fee of ₹250 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
+                  answer: 'Yes — a visit fee of ₹299 covers the technician callout. Parts and replacements are billed separately and only installed after you approve the upfront quote.'
                 },
                 {
                   question: 'What types of bicycles do you service?',

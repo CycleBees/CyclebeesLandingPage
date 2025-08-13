@@ -1,14 +1,29 @@
 import React from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
-import OnCallSection from '@/components/OnCallSection';
-import HowItWorksSection from '@/components/HowItWorksSection';
-import BenefitsSection from '@/components/BenefitsSection';
-import WhyUsSection from '@/components/WhyUsSection';
-import BlogSection from '@/components/BlogSection';
-import DownloadSection from '@/components/DownloadSection';
+
+// Lazy load below-the-fold components
+const OnCallSection = dynamic(() => import('@/components/OnCallSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
+const HowItWorksSection = dynamic(() => import('@/components/HowItWorksSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
+const BenefitsSection = dynamic(() => import('@/components/BenefitsSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
+const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
+const BlogSection = dynamic(() => import('@/components/BlogSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
+const DownloadSection = dynamic(() => import('@/components/DownloadSection'), {
+  loading: () => <div className="py-8 animate-pulse bg-gray-100 rounded-lg mx-4"></div>
+});
 
 const Home: React.FC = () => {
   return (

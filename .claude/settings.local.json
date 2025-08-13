@@ -15,7 +15,8 @@
       "Bash(rm:*)",
       "Bash(taskkill:*)",
       "Bash(npx kill-port:*)",
-      "Bash(npx tailwindcss:*)"
+      "Bash(npx tailwindcss:*)",
+      "WebFetch(domain:collection.cloudinary.com)"
     ],
     "deny": []
   }

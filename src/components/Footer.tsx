@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BUSINESS_INFO, CONTACT_INFO } from '@/constants';
 
 const Footer: React.FC = () => {
   const quickLinks = [
@@ -87,11 +88,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-3 text-sm">Contact</h3>
             <div className="space-y-1 text-xs text-gray-300">
-              <p>+91 95973 12212</p>
-              <p>mail@cyclebees.in</p>
-              <p>RS Puram, Coimbatore</p>
-              <p>Tamil Nadu - 641002</p>
-              <p className="text-primary font-semibold mt-2">Visit fee: ₹250 (technician callout; parts & replacements billed separately with an upfront quote)</p>
+              <p>{CONTACT_INFO.PHONE}</p>
+              <p>{CONTACT_INFO.EMAIL}</p>
+              <p>{CONTACT_INFO.ADDRESS}</p>
+              <p>{CONTACT_INFO.STATE} - {CONTACT_INFO.POSTAL_CODE}</p>
+              <p className="text-primary font-semibold mt-2">Visit fee: {BUSINESS_INFO.VISIT_FEE} (technician callout; parts & replacements billed separately with an upfront quote)</p>
             </div>
           </div>
 

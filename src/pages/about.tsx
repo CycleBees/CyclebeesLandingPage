@@ -102,10 +102,13 @@ const AboutPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary-100/20 blur-2xl rounded-full transform scale-110"></div>
                   <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
                     <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-secondary-100/10 rounded-xl overflow-hidden">
-                      <img
+                      <Image
                         src="/cyclebees_Contact_Page_Image_1.webp"
-                        alt="CycleBees Cycling"
+                        alt="Professional bicycle service team working on customer bikes in Coimbatore"
+                        width={450}
+                        height={320}
                         className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
                       />
                     </div>
                   </div>
