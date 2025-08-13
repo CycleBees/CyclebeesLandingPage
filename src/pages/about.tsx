@@ -184,7 +184,7 @@ const AboutPage: React.FC = () => {
               <p className="text-base text-white/90">The principles that guide everything we do</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
                 <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                   <div className="text-3xl mb-3">{value.icon}</div>
@@ -220,29 +220,6 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Join the CycleBees Family</h2>
-            <p className="text-base text-secondary-600 mb-6">
-              Experience the difference that passion, expertise, and innovation can make
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.location.href = '/services'}
-                className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-base"
-              >
-                Book a Service
-              </button>
-              <button 
-                onClick={() => window.location.href = '/contact'}
-                className="bg-secondary-100 text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary-100/90 transition-colors duration-200 shadow-md text-base"
-              >
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </section>
         
         {/* Download App Section */}
         <DownloadAppSection />

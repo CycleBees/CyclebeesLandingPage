@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia:wght@400;700&display=swap&subset=latin');
 
 * {
   box-sizing: border-box;
@@ -54,15 +54,41 @@ section {
   }
 }
 
-/* Smooth scroll for iOS/Safari */
-* {
+/* Smooth scroll for iOS/Safari - optimized */
+html {
   -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Focus styles for accessibility */
 *:focus {
   outline: 2px solid #FFD11E;
   outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.performance-optimized {
+  /* Use transform instead of changing properties that trigger layout */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize animations to use only transform and opacity */
+.smooth-transition {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 /* Standardized Typography */

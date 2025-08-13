@@ -8,6 +8,10 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logowhite.png" />
         
+        {/* Font preloading for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Open Graph tags */}
         <meta property="og:title" content="CycleBees - Professional Bicycle Services" />
         <meta property="og:description" content="Expert bicycle mechanics, premium repairs, bike rentals & cycling coaching. Trusted by riders across Coimbatore." />

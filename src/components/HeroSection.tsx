@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
-  const buttonStyles = "bg-secondary-100 text-white px-6 py-3 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold shadow-lg";
+  const buttonStyles = "bg-secondary-100 text-white px-6 py-3 rounded-lg hover:bg-secondary-100/90 transition-colors duration-150 font-semibold shadow-lg";
 
   const handleDownloadApp = () => {
     alert('Coming Soon!');
@@ -14,17 +14,17 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-[80vh] sm:min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 sm:pt-16 pb-4 sm:pb-8 border-b border-light-yellow">
+    <section id="hero" className="min-h-[85vh] sm:min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-20 sm:pt-16 pb-6 sm:pb-8 border-b border-light-yellow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-100 mb-4 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary-100 mb-4 leading-tight">
               Your Ride.{' '}
               <br />
               <span className="text-secondary-100">Our Responsibility.</span>
             </h1>
             
-            <p className="text-lg text-secondary-100/90 mb-6 max-w-xl">
+            <p className="text-base md:text-lg text-secondary-100/90 mb-6 max-w-xl">
               Book Professional mechanics at your doorstep for Repair and Rentals for all kinds of bicycle
             </p>
 

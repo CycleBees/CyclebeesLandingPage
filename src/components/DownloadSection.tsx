@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const DownloadSection: React.FC = () => {
-  const downloadButtonStyles = "bg-secondary-100 text-white px-4 py-2 rounded-lg hover:bg-secondary-100/90 transition-all duration-200 font-semibold text-sm shadow-md hover:shadow-lg transform hover:scale-105 flex items-center justify-center";
+  const downloadButtonStyles = "bg-secondary-100 text-white px-4 py-2 rounded-lg hover:bg-secondary-100/90 transition-colors duration-150 font-semibold text-sm shadow-md hover:shadow-lg flex items-center justify-center";
 
   const handleDownloadApp = (platform: 'android' | 'ios') => {
     alert('Coming Soon!');
@@ -54,7 +54,7 @@ const DownloadSection: React.FC = () => {
           <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative max-w-[200px] sm:max-w-[240px] lg:max-w-[280px]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary-100/20 opacity-30 blur-2xl rounded-full transform scale-110"></div>
-              <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative z-10">
                 <Image
                   src="/hero-app.webp"
                   alt="CycleBees Mobile App Download"

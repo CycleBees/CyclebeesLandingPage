@@ -71,7 +71,7 @@ const ServicesPage: React.FC = () => {
               <p className="text-base text-secondary-600 max-w-lg mx-auto">Professional bicycle repair and maintenance services</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4">
               {repairServices.map((service, index) => (
                 <div key={index} className="bg-white border border-secondary-300 rounded-lg p-4 text-center hover:border-primary transition-all duration-300 hover:shadow-lg group">
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>

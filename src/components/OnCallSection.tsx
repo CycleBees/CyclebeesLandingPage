@@ -11,7 +11,7 @@ const OnCallSection: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + benefits.length) % benefits.length);
   };
 
-  const navButtonStyles = "w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-primary/30 transition-colors duration-200";
+  const navButtonStyles = "w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-secondary-100 hover:bg-primary/30 transition-colors duration-150";
   
   const benefits = [
     {
@@ -49,7 +49,7 @@ const OnCallSection: React.FC = () => {
         {/* Desktop Grid View */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1 items-center mb-4">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
+            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-150">
               <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">
                 {benefit.icon}
               </div>
