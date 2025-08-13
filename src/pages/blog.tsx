@@ -217,38 +217,46 @@ Remember: It's better to arrive late than not at all!`,
         </Head>
         
         <Layout>
-          <div className="min-h-screen bg-white pt-20 border-t border-light-yellow">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <button 
-                onClick={() => setSelectedPost(null)}
-                className="mb-8 flex items-center text-primary hover:text-primary/80 transition-colors duration-200"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Back to Blog
-              </button>
+          {/* Hero Section */}
+          <section className="min-h-[40vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow flex items-center">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+              <div className="w-full">
+                <button 
+                  onClick={() => setSelectedPost(null)}
+                  className="mb-6 flex items-center text-secondary-100 hover:text-secondary-100/80 transition-colors duration-200"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back to Blog
+                </button>
 
-              <article>
-                <div className="mb-6">
-                  <span className="bg-primary text-secondary-100 px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="mb-4">
+                  <span className="bg-secondary-100 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {post.category}
                   </span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-6 leading-tight">
+                <h1 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4 leading-tight">
                   {post.title}
                 </h1>
 
-                <div className="flex items-center text-secondary-600 mb-8">
+                <div className="flex items-center text-secondary-100/90 text-sm">
                   <span>By {post.author}</span>
                   <span className="mx-3">•</span>
                   <span>{post.date}</span>
                   <span className="mx-3">•</span>
                   <span>{post.readTime}</span>
                 </div>
+              </div>
+            </div>
+          </section>
 
-                <div className="relative h-64 md:h-96 mb-8 rounded-xl overflow-hidden">
+          {/* Article Content */}
+          <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <article>
+                <div className="relative h-64 md:h-80 mb-8 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -261,7 +269,7 @@ Remember: It's better to arrive late than not at all!`,
                   {post.content.split('\n\n').map((paragraph, index) => {
                     if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
                       return (
-                        <h3 key={index} className="text-xl font-bold text-secondary-100 mt-8 mb-4">
+                        <h3 key={index} className="text-lg md:text-xl font-bold text-secondary-100 mt-6 mb-3">
                           {paragraph.replace(/\*\*/g, '')}
                         </h3>
                       );
@@ -269,7 +277,7 @@ Remember: It's better to arrive late than not at all!`,
                     if (paragraph.includes('**')) {
                       const parts = paragraph.split('**');
                       return (
-                        <p key={index} className="text-secondary-600 mb-4 leading-relaxed">
+                        <p key={index} className="text-secondary-600 mb-4 leading-relaxed text-base">
                           {parts.map((part, partIndex) => 
                             partIndex % 2 === 1 ? 
                               <strong key={partIndex} className="text-secondary-100">{part}</strong> : 
@@ -281,40 +289,43 @@ Remember: It's better to arrive late than not at all!`,
                     if (paragraph.startsWith('- ')) {
                       const items = paragraph.split('\n').filter(item => item.startsWith('- '));
                       return (
-                        <ul key={index} className="list-disc list-inside text-secondary-600 mb-4 space-y-1">
+                        <ul key={index} className="list-disc list-inside text-secondary-600 mb-4 space-y-2 text-base ml-4">
                           {items.map((item, itemIndex) => (
-                            <li key={itemIndex}>{item.replace('- ', '')}</li>
+                            <li key={itemIndex} className="leading-relaxed">{item.replace('- ', '')}</li>
                           ))}
                         </ul>
                       );
                     }
                     return (
-                      <p key={index} className="text-secondary-600 mb-4 leading-relaxed">
+                      <p key={index} className="text-secondary-600 mb-4 leading-relaxed text-base">
                         {paragraph}
                       </p>
                     );
                   })}
                 </div>
-
-                <div className="mt-12 pt-8 border-t border-secondary-300/30">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-secondary-600">Share this article:</span>
-                      <button className="text-primary hover:text-primary/80 transition-colors duration-200">
-                        Share on WhatsApp
-                      </button>
-                    </div>
-                    <button 
-                      onClick={() => setSelectedPost(null)}
-                      className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200"
-                    >
-                      Read More Articles
-                    </button>
-                  </div>
-                </div>
               </article>
             </div>
-          </div>
+          </section>
+
+          {/* Share & Navigation Section */}
+          <section className="py-8 my-3 bg-gradient-to-br from-secondary-300/20 to-primary/10 border-t border-light-yellow border-b border-light-yellow">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center space-x-4">
+                  <span className="text-secondary-600 text-sm">Share this article:</span>
+                  <button className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium">
+                    Share on WhatsApp
+                  </button>
+                </div>
+                <button 
+                  onClick={() => setSelectedPost(null)}
+                  className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm"
+                >
+                  Read More Articles
+                </button>
+              </div>
+            </div>
+          </section>
         </Layout>
       </>
     );
@@ -328,22 +339,29 @@ Remember: It's better to arrive late than not at all!`,
       </Head>
       
       <Layout>
-        <div className="min-h-screen bg-white pt-20 border-t border-light-yellow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-secondary-100 mb-6">
+        {/* Hero Section */}
+        <section className="min-h-[30vh] bg-gradient-to-br from-secondary-200 via-primary to-secondary-300 pt-16 border-b border-light-yellow flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-secondary-100 mb-4">
                 CycleBees Blog
               </h1>
-              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+              <p className="text-lg text-secondary-100/90 max-w-2xl mx-auto">
                 Expert cycling tips, maintenance guides, and industry insights to keep you rolling smoothly
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Blog Posts Section */}
+        <section className="py-8 my-3 bg-white border-t border-light-yellow border-b border-light-yellow">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
                 <article 
                   key={post.id} 
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 group cursor-pointer"
+                  className="bg-white border border-secondary-300/30 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:border-primary transition-all duration-150 group cursor-pointer"
                   onClick={() => setSelectedPost(post.id)}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -361,23 +379,23 @@ Remember: It's better to arrive late than not at all!`,
                   </div>
                   
                   <div className="p-6">
-                    <div className="flex items-center text-sm text-secondary-600 mb-3">
+                    <div className="flex items-center text-xs text-secondary-600 mb-3">
                       <span>{post.date}</span>
                       <span className="mx-2">•</span>
                       <span>{post.readTime}</span>
                     </div>
                     
-                    <h2 className="text-xl font-bold text-secondary-100 mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
+                    <h2 className="text-lg font-bold text-secondary-100 mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-200">
                       {post.title}
                     </h2>
                     
-                    <p className="text-secondary-600 line-clamp-3 mb-4">
+                    <p className="text-sm text-secondary-600 line-clamp-3 mb-4 leading-relaxed">
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-secondary-600">By {post.author}</span>
-                      <div className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center">
+                    <div className="flex items-center justify-between pt-4 border-t border-secondary-300/20">
+                      <span className="text-xs text-secondary-600">By {post.author}</span>
+                      <div className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-sm">
                         Read More
                         <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -389,32 +407,28 @@ Remember: It's better to arrive late than not at all!`,
               ))}
             </div>
 
-            {/* Newsletter Section */}
-            <div className="mt-16">
-              <div className="bg-gradient-to-r from-primary/10 via-secondary-300/20 to-primary/10 rounded-xl p-8 text-center">
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-3xl font-bold text-secondary-100 mb-4">
-                    🚴‍♀️ Join Our Amazing Community
-                  </h3>
-                  <p className="text-secondary-600 mb-8 text-lg">
-                    Subscribe to our newsletter for the latest cycling tips, maintenance guides, and exclusive CycleBees updates delivered to your inbox
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-                    <input
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="flex-1 px-6 py-4 rounded-xl border-2 border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-lg"
-                    />
-                    <button className="bg-primary text-secondary-100 px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-200 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                      Subscribe Now
-                    </button>
-                  </div>
-                  <p className="text-secondary-600/70 text-sm mt-4">✨ Join our amazing cycling community</p>
-                </div>
-              </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-8 my-3 bg-gradient-to-br from-secondary-300/20 to-primary/10 border-t border-light-yellow border-b border-light-yellow">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-3">Join Our Cycling Community</h2>
+            <p className="text-base text-secondary-600 mb-6 max-w-2xl mx-auto">
+              Subscribe to our newsletter for the latest cycling tips, maintenance guides, and exclusive CycleBees updates
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-4 py-2 rounded-lg border border-secondary-300/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-gray-50/50"
+              />
+              <button className="bg-primary text-secondary-100 px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-md text-sm">
+                Subscribe
+              </button>
             </div>
           </div>
-        </div>
+        </section>
       </Layout>
     </>
   );

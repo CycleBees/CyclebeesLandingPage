@@ -49,7 +49,7 @@ const OnCallSection: React.FC = () => {
         {/* Desktop Grid View */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 flex-1 items-center mb-4">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-150">
+            <div key={index} className="bg-white border border-secondary-300/30 rounded-xl p-6 text-center shadow-md hover:shadow-lg hover:border-primary transition-all duration-150">
               <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">
                 {benefit.icon}
               </div>
@@ -65,7 +65,7 @@ const OnCallSection: React.FC = () => {
 
         {/* Mobile Carousel View */}
         <div className="md:hidden flex-1 mb-4">
-          <div className="bg-white rounded-xl p-6 text-center shadow-md">
+          <div className="bg-white border border-secondary-300/30 rounded-xl p-6 text-center shadow-md hover:border-primary transition-all duration-150">
             <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center text-3xl">
               {benefits[currentSlide].icon}
             </div>

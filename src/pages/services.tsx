@@ -16,14 +16,14 @@ const ServicesPage: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const repairServices = [
-    { name: 'Chain Repair', icon: '🔗', description: 'Professional chain cleaning, lubrication and replacement services' },
-    { name: 'Brake Tuning', icon: '🛑', description: 'Complete brake adjustment and safety inspection for optimal stopping power' },
-    { name: 'Gear Adjustment', icon: '⚙️', description: 'Precise gear shifting calibration for smooth riding experience' },
-    { name: 'Tyre Service', icon: '🛞', description: 'Tyre replacement, puncture repair and pressure optimization' },
-    { name: 'Wheel Truing', icon: '⚪', description: 'Professional wheel alignment and spoke tension adjustment' },
-    { name: 'Full Service', icon: '🔧', description: 'Comprehensive bicycle maintenance and performance optimization' },
-    { name: 'Quick Wash', icon: '💧', description: 'Professional cleaning and basic maintenance check' },
-    { name: 'Emergency Assist', icon: '🚨', description: '24/7 roadside assistance for bicycle breakdowns and repairs' }
+    { name: 'Chain Repair', icon: '🔗', description: 'Chain cleaning & replacement' },
+    { name: 'Brake Tuning', icon: '🛑', description: 'Brake adjustment & safety check' },
+    { name: 'Gear Adjustment', icon: '⚙️', description: 'Smooth gear shifting setup' },
+    { name: 'Tyre Service', icon: '🛞', description: 'Puncture repair & replacement' },
+    { name: 'Wheel Truing', icon: '⚪', description: 'Wheel alignment & balancing' },
+    { name: 'Full Service', icon: '🔧', description: 'Complete bike maintenance' },
+    { name: 'Quick Wash', icon: '💧', description: 'Professional bike cleaning' },
+    { name: 'Emergency Assist', icon: '🚨', description: '24/7 roadside support' }
   ];
 
 
