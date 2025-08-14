@@ -54,7 +54,7 @@ const ContactPage: React.FC = () => {
     },
     {
       question: 'What payment methods do you accept?',
-      answer: 'We accept UPI, debit/credit cards, netbanking and major wallets through the app. Cash on completion is available in select cases.'
+      answer: 'We accept UPI, debit/credit cards, netbanking and major wallets through the app. Cash on completion is available in select cases. All digital payments follow <a href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11142" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">RBI digital payment guidelines</a>.'
     },
     {
       question: 'What types of bicycles do you service?',

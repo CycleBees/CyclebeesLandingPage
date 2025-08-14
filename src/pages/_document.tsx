@@ -4,9 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="CycleBees - Professional Bicycle Services. Expert mechanics, premium repairs, bike rentals & cycling coaching. Trusted by riders across Coimbatore." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logowhite.png" />
+        <link rel="apple-touch-icon" href="/logo.webp" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.webp" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logowhite.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/logowhite.png" />
         
         {/* Critical resource preloading for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -141,9 +144,9 @@ export default function Document() {
                 }
               ],
               "sameAs": [
-                "https://www.facebook.com/cyclebees",
-                "https://www.instagram.com/cyclebees",
-                "https://www.linkedin.com/company/cyclebees"
+                "https://www.instagram.com/ridewithcyclebees/",
+                "https://www.linkedin.com/company/cyclebees/about/",
+                "https://x.com/CycleBees"
               ]
             })
           }}

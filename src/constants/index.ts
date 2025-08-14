@@ -20,9 +20,9 @@ export const BUSINESS_INFO = {
 } as const;
 
 export const SOCIAL_LINKS = {
-  FACEBOOK: 'https://www.facebook.com/cyclebees',
-  INSTAGRAM: 'https://www.instagram.com/cyclebees',
-  LINKEDIN: 'https://www.linkedin.com/company/cyclebees'
+  INSTAGRAM: 'https://www.instagram.com/ridewithcyclebees/',
+  LINKEDIN: 'https://www.linkedin.com/company/cyclebees/about/',
+  TWITTER: 'https://x.com/CycleBees'
 } as const;
 
 export const GEO_LOCATION = {

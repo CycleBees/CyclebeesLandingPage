@@ -143,15 +143,13 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
                     );
                   }
                   if (paragraph.includes('**')) {
-                    const parts = paragraph.split('**');
+                    const htmlContent = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-secondary-100">$1</strong>');
                     return (
-                      <p key={index} className="text-secondary-600 mb-4 leading-relaxed text-base">
-                        {parts.map((part, partIndex) => 
-                          partIndex % 2 === 1 ? 
-                            <strong key={partIndex} className="text-secondary-100">{part}</strong> : 
-                            part
-                        )}
-                      </p>
+                      <p 
+                        key={index} 
+                        className="text-secondary-600 mb-4 leading-relaxed text-base"
+                        dangerouslySetInnerHTML={{ __html: htmlContent }}
+                      />
                     );
                   }
                   if (paragraph.startsWith('- ')) {
@@ -165,9 +163,11 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
                     );
                   }
                   return (
-                    <p key={index} className="text-secondary-600 mb-4 leading-relaxed text-base">
-                      {paragraph}
-                    </p>
+                    <p 
+                      key={index} 
+                      className="text-secondary-600 mb-4 leading-relaxed text-base"
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
                   );
                 })}
               </div>

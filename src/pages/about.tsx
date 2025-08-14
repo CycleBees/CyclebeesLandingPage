@@ -80,19 +80,15 @@ const AboutPage: React.FC = () => {
                 <h2 className="text-xl md:text-2xl font-bold text-secondary-100 mb-6">Our Story</h2>
                 <div className="space-y-4">
                   <p className="text-base text-secondary-600 leading-relaxed">
-                    CycleBees was founded in Coimbatore to fix a simple problem: getting reliable, professional bicycle service should be effortless. What began as a rider&apos;s frustration with long shop queues and inconsistent quality became a platform that combines expert mechanics, smart logistics and a clean app experience — so riders can book certified doorstep repairs, lease premium bikes and get fast on-road support without leaving home or hotel.
+                    Founded in Coimbatore to solve bicycle service challenges, CycleBees combines expert mechanics with smart technology. Our platform enables doorstep repairs, bike leasing, and on-road support through a seamless app experience.
                   </p>
-                  <h3 className="text-lg font-bold text-secondary-100 mb-2">What we do</h3>
+                  <h3 className="text-lg font-bold text-secondary-100 mb-2">Our Mission</h3>
                   <p className="text-base text-secondary-600 leading-relaxed">
-                    We offer app & web booking for on-demand doorstep repairs, premium bicycle leasing and accessories delivery. Every visit is backed by certified technicians, genuine parts, transparent pricing and a workmanship guarantee — designed so riders spend less time managing bikes and more time riding.
+                    Delivering professional bicycle services with certified technicians, genuine parts, and transparent pricing. From doorstep repairs to premium rentals — designed so riders spend more time riding. We follow <a href="https://www.sheldonbrown.com/maintenance.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">industry-standard maintenance practices</a> for optimal bicycle care.
                   </p>
-                  <h3 className="text-lg font-bold text-secondary-100 mb-2">The 3-Bees story</h3>
+                  <h3 className="text-lg font-bold text-secondary-100 mb-2">The Team</h3>
                   <p className="text-base text-secondary-600 leading-relaxed">
-                    Frustrated by unreliable local repairs, a professional cyclist (Guru) teamed with his trusted neighbor and veteran mechanic (Babu) to build a faster, more dependable service — and they brought in a technical co-founder (Hitesh) to turn the idea into a platform. Built by riders. Backed by repair. Powered by tech.
-                  </p>
-                  <h3 className="text-lg font-bold text-secondary-100 mb-2">Impact & traction</h3>
-                  <p className="text-base text-secondary-600 leading-relaxed">
-                    Trusted by riders in Coimbatore — we&apos;ve served over 1000+ customers during our pilot and early rollouts, and continue to scale service capacity, rental inventory and B2B partnerships with hotels and events.
+                    Built by a professional cyclist (Guru), veteran mechanic (Babu), and tech expert (Hitesh) who combined their expertise to revolutionize bicycle service in India.
                   </p>
                 </div>
               </div>

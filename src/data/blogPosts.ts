@@ -190,6 +190,8 @@ The future is electric, and it's arriving on two wheels!`,
 - Reflective tire sidewalls
 - Avoid dark clothing
 
+For additional safety guidelines, refer to the <a href="https://www.bikeleague.org/ridesafe" target="_blank" rel="noopener noreferrer" style="color: #FFD11E; text-decoration: underline;">League of American Bicyclists safety resources</a>.
+
 Remember: It's better to arrive late than not at all!`,
     image: 'https://res.cloudinary.com/dc6t0u2j2/image/upload/v1755079631/Top_10_Bicycle_Safety_Tips_for_Coimbatore_Roads_ereprc.jpg',
     date: 'Jul 28, 2025',

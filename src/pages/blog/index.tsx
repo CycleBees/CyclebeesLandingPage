@@ -119,7 +119,7 @@ const BlogIndexPage: React.FC = () => {
                       <div className="flex items-center justify-between pt-4 border-t border-secondary-300/20">
                         <span className="text-xs text-secondary-600">By {post.author}</span>
                         <div className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-sm">
-                          Read More
+                          Continue Reading
                           <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>

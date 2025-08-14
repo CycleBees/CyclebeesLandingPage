@@ -91,7 +91,7 @@ const BlogSection: React.FC = () => {
                   href={`/blog/${post.id}`}
                   className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-xs"
                 >
-                  Read More
+                  Read {post.category} Guide
                   <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -142,7 +142,7 @@ const BlogSection: React.FC = () => {
                 href={`/blog/${previewPosts[currentSlide].id}`}
                 className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center text-xs"
               >
-                Read More
+                View Full Article
                 <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

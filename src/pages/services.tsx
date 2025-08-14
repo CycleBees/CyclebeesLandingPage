@@ -332,7 +332,7 @@ const ServicesPage: React.FC = () => {
                 },
                 {
                   question: 'What types of bicycles do you service?',
-                  answer: 'We service kid\'s bikes, commuters, hybrid, road, MTB and e-bikes (including e-bike diagnostics and common electric system checks).'
+                  answer: 'We service kid\'s bikes, commuters, hybrid, road, MTB and e-bikes (including e-bike diagnostics and common electric system checks). Our mechanics are trained in <a href="https://www.parktool.com/blog/repair-help" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">professional repair techniques</a> for all bicycle types.'
                 },
                 {
                   question: 'What workmanship guarantee do you provide?',
